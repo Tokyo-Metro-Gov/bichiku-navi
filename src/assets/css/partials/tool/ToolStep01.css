@@ -1,0 +1,269 @@
+.ToolStep01 {
+  & .ToolStep01__people {
+    margin-top: rem(56px);
+    font-size: rem(20px);
+    font-weight: bold;
+    text-align: center;
+
+    & > span {
+      font-size: rem(40px);
+    }
+  }
+
+  & .ToolStep01__indexList {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: rem(240px);
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    & > li {
+      flex-basis: 33%;
+      margin-top: rem(24px)
+    }
+
+    & label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(64px);
+      height: rem(64px);
+      font-size: rem(32px);
+      border-radius: 50%;
+
+      &:hover {
+        background-color: var(--colorLYellow);
+      }
+
+      &:focus {
+        outline: 1px dotted #212121;
+        outline: 5px auto -webkit-focus-ring-color;
+      }
+    }
+  }
+
+  & .ToolStep01__prompt {
+    margin-top: rem(72px);
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  & .ToolStep01__promptHeader {
+    padding-top: rem(16px);
+    padding-bottom: rem(16px);
+    font-size: rem(20px);
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--colorYellow);
+  }
+
+  & .ToolStep01__promptBody {
+    padding: rem(24px) rem(24px)  rem(32px);
+    background-color: var(--colorLGray);
+  }
+
+  & .ToolStep01__inputBlock {
+    & + .ToolStep01__inputBlock {
+      margin-top: rem(32px);
+    }
+
+    & label {
+      display: block;
+      padding: rem(16px) rem(10px);
+      border-radius: 10px;
+
+      &:hover {
+        background-color: var(--colorLYellow);
+      }
+      
+      &:focus {
+        outline: 1px dotted #212121;
+        outline: 5px auto -webkit-focus-ring-color;
+      }
+    }
+
+    & label > span {
+      display: block;
+      margin-top: rem(8px);
+      font-size: rem(13px);
+      font-weight: normal;
+      line-height: 1.5;
+    }
+  }
+
+  & .ToolStep01__inputTitle {
+    font-size: rem(20px);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  & .ToolStep01__inputSex {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(16px);
+
+
+
+    & > div + div {
+      margin-left: rem(16px);
+    }
+  }
+
+  & .ToolStep01__inputGeneration {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      flex-basis: calc(33% - 16px);
+      margin-top: rem(16px);
+      margin-left: rem(16px);
+    }
+  }
+
+  & .ToolStep01__results {
+    margin-top: rem(64px);
+  }
+
+  & .ToolStep01__resultsImg {
+    text-align: center;
+  }
+
+  & .ToolStep01__resultsText {
+    margin-top: rem(40px);
+    font-size: rem(20px);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  & .ToolStep01__resultsList {
+    max-width: rem(350px);
+    margin-top: rem(48px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  & .ToolStep01__resultsListItem {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fff;
+    border: 2px solid #c1c1c1;
+    border-radius: 10px;
+
+    & + .ToolStep01__resultsListItem {
+      margin-top: rem(16px);
+    }
+  }
+
+  & .ToolStep01__resultsListItem.-notEntered {
+    border-color: red;
+
+    & .ToolStep01Results__listItemLabel {
+      color: #fff;
+      background-color: red;
+    }
+
+    & a {
+      display: block;
+      width: 100%;
+      color: red;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  & .ToolStep01Results__listItemLabel {
+    padding: rem(16px);
+    font-weight: bold;
+    background-color: var(--colorYellow);
+  }
+
+  & .ToolStep01Results__listItemBody {
+    padding: rem(16px);
+
+  }
+
+}
+
+@media (--md) {
+  .ToolStep01 {
+    padding-top: rem(55px);
+
+    & .ToolStep01__people {
+      margin-top: rem(24px);
+      font-size: rem(18px);
+
+      & > span {
+        font-size: rem(32px);
+      }
+    }
+
+    & .ToolStep01__resultsText {
+      margin-top: rem(16px);
+    }
+
+    & .ToolStep01__indexList {
+      margin-top: 0;
+    }
+
+    & .ToolStep01__prompt {
+      margin-top: rem(56px);
+
+      & + .ToolStep01__prompt {
+        margin-top: rem(32px);
+      }
+    }
+
+    & .ToolStep01__promptBody {
+      padding: rem(24px) rem(10px);
+    }
+
+    & .ToolStep01__inputBlock {
+      & label {
+        padding-right: rem(16px);
+        padding-left: rem(16px);
+      }
+
+      & label > span {
+        font-size: rem(14px);
+      }
+    }
+
+    & .ToolStep01__inputSex {
+      margin-top: rem(4px);
+
+      & > div {
+        width: calc(50% - 12px);
+      }
+
+      & > div + div {
+        margin-left: rem(12px);
+      }
+    }
+
+    & .ToolStep01__inputGeneration {
+      margin-top: rem(0);
+
+      & > div {
+        flex-basis: calc(50% - 12px);
+        margin-top: rem(12px);
+        margin-left: rem(12px);
+      }
+    }
+
+    & .ToolStep01__results {
+      margin-top: rem(32px);
+    }
+
+    & .ToolStep01__resultsList {
+      margin-top: rem(16px);
+
+    }
+  }
+
+
+}

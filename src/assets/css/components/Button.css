@@ -1,0 +1,97 @@
+.Button {
+  --color: #eee;
+  --width: rem(260px);
+  --round: rem(30px);
+  --fontSize: rem(18px);
+  --padding: rem(16px);
+
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: var(--width);
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
+  font-size: var(--fontSize);
+  font-weight: bolder;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--color);
+  border: none;
+  border-radius: var(--round);
+  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.1);
+  appearance: none;
+
+  &:hover {
+    background-color: rgb(248, 244, 223);;
+  }
+
+  & .Button__link {
+    display: block;
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+    margin-top: calc(var(--padding) * -1);
+    margin-bottom: calc(var(--padding) * -1);
+    text-decoration: none;
+  }
+}
+
+.Button.-l {
+  --width: rem(380px);
+  --round: rem(64px);
+  --fontSize: rem(20px);
+  --padding: rem(32px);
+}
+
+@media (--md) {
+  .Button.-l {
+    --width: 90%;
+    --fontSize: rem(18px);
+    --padding: rem(16px);
+  }
+}
+
+.Button.-xl {
+  --width: rem(420px);
+  --round: rem(64px);
+  --fontSize: rem(20px);
+  --padding: rem(32px);
+}
+
+@media (--md) {
+  .Button.-xl {
+    --width: 90%;
+    --fontSize: rem(18px);
+  }
+}
+
+.Button.-yellow {
+  --color: var(--colorYellow);
+
+  &:hover {
+    background-color: #fff26e;
+  }
+}
+
+
+.Button.-yellowPale {
+  --color: var(--colorLYellow);
+
+  &:hover {
+    background-color: #fff396;
+  }
+}
+
+.Button.-aqua {
+  --color: var(--colorAqua);
+
+  color: #fff;
+
+  &:hover {
+    background-color: #238ec7;
+  }
+}
+
+.Button:disabled {
+  color: #999;
+  pointer-events: none;
+  background-color: #ccc;
+}

@@ -1,0 +1,17 @@
+._show {
+  display: block;
+}
+
+._hide {
+  display: none
+}
+
+@media (--md) {
+  ._hideMobile {
+    display: none
+  }
+
+  ._showMobile {
+    display: block;
+  }
+}

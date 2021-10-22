@@ -1,0 +1,93 @@
+.SpGlobalNavWrap {
+  position: fixed;
+  top: rem(50px);
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.SpGlobalNav {
+  position: fixed;
+  top: rem(50px);
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: rem(16px) rem(10px);
+  font-size: rem(14px);
+  line-height: 1;
+  color: #fff;
+  background-color: var(--colorSpecifed1);
+
+  & a {
+    color: #fff;
+  }
+
+  & .SpGlobalNav__langSwitcher {
+    text-align: center;
+    background-color: #3f4770;
+
+    & > a {
+      display: block;
+      padding-top: rem(12px);
+      padding-bottom: rem(12px);
+      color: #fff;
+      text-decoration: none
+    }
+  }
+
+  & .SpGlobalNav__list {
+    margin-top: rem(16px);
+
+    & > li + li {
+      margin-top: rem(2px);
+    }
+
+    & > li > a {
+      display: block;
+      padding: rem(16px);
+      color: var(--colorFontBase);
+      text-decoration: none;
+      background-color: #fff;
+      transition: background-color 0.25s ease-out;
+    }
+
+    & .nuxt-link-active,
+    & .nuxt-link-exact-active,
+    & .-active,
+    & > li > a:hover {
+      color: #fff;
+      background-color: #5c6591;
+      will-change: background-color;
+    }
+  }
+
+  & .SpGlobalNav__util {
+    margin-top: rem(16px);
+    font-size: rem(13px);
+
+    & > a {
+      display: block;
+    }
+
+    & > a + a {
+      margin-top: rem(16px);
+    }
+  }
+
+  & .SpGlobalNav__close {
+    margin-top: rem(16px);
+    text-align: center;
+
+    & > button {
+      padding: rem(12px) rem(48px);
+      line-height: 1;
+      color: var(--colorSpecifed1);
+      cursor: pointer;
+      background-color: var(--colorSpecifed2);
+      border: none;
+      appearance: none;
+    }
+  }
+}

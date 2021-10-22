@@ -1,0 +1,48 @@
+.SpGlobalHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  display: none;
+  width: 100%;
+  padding: rem(12px) rem(10px);
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+
+  & a {
+    text-decoration: none;
+  }
+
+  & .SpGlobalHeader__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & .SpGlobalHeader__logo {
+    flex-basis: 64%;
+
+    & > a {
+      display: flex;
+      align-items: center;
+    }
+
+    & > a > img {
+      margin-right: rem(8px);
+    }
+  }
+}
+
+@media (--md) {
+  .SpGlobalHeader {
+    display: block;
+    padding: rem(5px) rem(10px);
+  }
+}
+
+@media print {
+  .SpGlobalHeader {
+    display: none;
+  }
+}

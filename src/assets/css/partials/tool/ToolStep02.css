@@ -1,0 +1,54 @@
+.ToolStep02 {
+  & .ToolStep02__input {
+    & label {
+      display: block;
+      padding-top: rem(24px);
+      padding-bottom: rem(24px);
+      line-height: 1.4;
+      border-radius: 10px;
+
+      &:focus {
+        outline: 1px dotted #212121;
+        outline: 5px auto -webkit-focus-ring-color;
+      }
+    }
+  }
+
+  & .ToolStep02__inputInner {
+    max-width: rem(240px);
+    margin-top: rem(56px);
+    margin-right: auto;
+    margin-left: auto;
+
+    & > div + div {
+      margin-top: rem(24px);
+    }
+  }
+
+  & .ToolStep02__inputText {
+    margin-top: rem(16px);
+    text-align: center;
+  }
+}
+
+@media (--md) {
+  .ToolStep02 {
+    padding-top: rem(55px);
+
+    & .ToolInput__title {
+      font-size: rem(16px);
+    }
+
+    & .ToolStep02__inputInner {
+      margin-top: rem(40px);
+
+      & > div + div {
+        margin-top: rem(16px);
+      }
+    }
+
+    & .ToolStep02__inputText {
+      font-size: rem(12px);
+    }
+  }
+}

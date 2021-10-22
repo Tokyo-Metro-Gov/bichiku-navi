@@ -1,0 +1,19 @@
+:root {
+  --fontSizeBase: 16px;
+  --fontFamily: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+  --colorFontBase: #222;
+  --colorYellow: #ffe802;
+  --colorLYellow: #fff7af;
+  --colorNavy: #002063;
+  --colorAqua: #2aa6e8;
+  --colorRed: #d60000;
+  --colorGray: #ddd;
+  --colorLGray: #f2f2f2;
+  --colorSpecifed1: var(--colorNavy); /* 紺 */
+  --colorSpecifed2: #d2d8f7; /* 明るい紫？ */
+  --colorSpecifed3: #dfe0e6; /* 灰 */
+  --zindexHide: -1;
+  --zindexStrong: 2;
+  --zindexStronger: 3;
+  --zindexStrongest: 4;
+}

@@ -1,0 +1,24 @@
+.HomeTool {
+  padding-top: rem(64px);
+  padding-bottom: rem(64px);
+  margin-top: rem(104px);
+  background-color: var(--colorLYellow);
+
+  & .HomeTool__input {
+    margin-top: rem(72px);
+  }
+}
+
+@media (--md) {
+  .HomeTool {
+    padding-top: rem(48px);
+    padding-bottom: rem(48px);
+    margin-top: rem(64px);
+
+    & .HomeTool__input {
+      margin-top: rem(48px);
+      margin-right: rem(-10px);
+      margin-left: rem(-10px);
+    }
+  }
+}

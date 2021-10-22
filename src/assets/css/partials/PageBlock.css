@@ -1,0 +1,56 @@
+.PageBlock {
+  & .PageBlock__title {
+    font-size: rem(24px);
+    text-align: center;
+  }
+
+  & .PageBlock__img {
+    margin-top: rem(40px);
+    text-align: center;
+  }
+
+  & .PageBlock__text {
+    margin-top: rem(40px);
+    line-height: 2;
+  }
+}
+
+@media (--md) {
+  .PageBlock {
+    padding-top: rem(24px);
+    padding-right: rem(20px);
+    padding-left: rem(20px);
+
+    & .PageBlock__title {
+      font-size: rem(20px);
+
+      & > span {
+        display: block;
+      }
+    }
+
+    & .PageBlock__img {
+      margin-top: rem(32px);
+    }
+
+    & .PageBlock__text {
+      margin-top: rem(32px);
+      line-height: 1.8;
+    }
+  }
+}
+
+
+@media print {
+  .PageBlock {
+    & .PageBlock__title {
+      & > span {
+        display: inline;
+      }
+    }
+  }
+
+  & .PageBlock__text {
+    display: none;
+  }
+}

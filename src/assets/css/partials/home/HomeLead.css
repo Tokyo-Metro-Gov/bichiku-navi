@@ -1,0 +1,6 @@
+.HomeLead {
+  & .HomeLead__button {
+    margin-top: rem(64px);
+    text-align: center;
+  }
+}

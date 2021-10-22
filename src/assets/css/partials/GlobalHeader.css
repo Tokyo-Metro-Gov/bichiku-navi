@@ -1,0 +1,53 @@
+.GlobalHeader {
+  padding-top: rem(21px);
+  padding-bottom: rem(21px);
+  line-height: 1;
+  background-color: #fff;
+
+  & .GlobalHeader__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & .GlobalHeader__logo {
+    font-size: rem(24px);
+    font-weight: bolder;
+
+    & a {
+      display: flex;
+      align-items: center;
+      text-decoration: none
+    }
+
+    & a > img {
+      margin-right: rem(16px);
+    }
+  }
+
+  & .GlobalHeader__util {
+    display: flex;
+    font-size: rem(14px);
+
+    & li + li {
+      margin-left: rem(24px);
+    }
+
+    & li:last-child {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (--md) {
+  .GlobalHeader {
+    display: none;
+  }
+}
+
+@media print {
+  .GlobalHeader {
+    display: none;
+  }
+}

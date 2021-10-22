@@ -1,0 +1,11 @@
+html[data-font-size='m'] {
+  --fontSizeBase: 18px;
+}
+
+html[data-font-size='l'] {
+  --fontSizeBase: 20px;
+}
+
+html[data-font-size='xl'] {
+  --fontSizeBase: 24px;
+}
