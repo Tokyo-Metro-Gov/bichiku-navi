@@ -1,0 +1,62 @@
+body.PageTool,
+body.LinkPage,
+body.PageSitemap,
+body.PageSettings {
+  & .GlobalFooter {
+    margin-top: rem(80px);
+  }
+}
+
+
+.GlobalFooter {
+  & .GlobalFooter__admin {
+    padding-top: rem(24px);
+    padding-bottom: rem(24px);
+    font-size: rem(13px);
+    color: #fff;
+    text-align: center;
+    background-color: var(--colorSpecifed1);
+  }
+}
+
+
+@media (--md) {
+  .GlobalFooter {
+    & .GlobalFooter__admin {
+      padding-top: rem(16px);
+      padding-bottom: rem(16px);
+
+      & span {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (--sm) {
+  .GlobalFooter {
+    & .GlobalFooter__bannerList {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-top: rem(-16px);
+      margin-left: rem(-16px);
+      text-align: center;
+
+      & > li {
+        flex-basis: calc(50% - 16px);
+        margin-top: rem(16px);
+        margin-left: rem(16px);
+      }
+
+      & > li + li {
+        margin-left: rem(16px);
+      }
+    }
+  }
+}
+
+@media print {
+  .GlobalFooter {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+.BaloonTitle {
+  text-align: center;
+
+  & > span {
+    position: relative;
+    display: inline-block;
+    padding: rem(12px) rem(72px);
+    font-size: rem(18px);
+    background-color: var(--colorYellow);
+  }
+
+  & > span::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    border-color: var(--colorYellow) transparent transparent transparent;
+    border-style: solid;
+    border-width: 15.6px 9px 0 9px;
+    transform: translateX(-50%);
+  }
+}

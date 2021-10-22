@@ -1,0 +1,122 @@
+/*
+ * ツール全体の共通
+*/
+.ToolInput {
+  padding: rem(32px) rem(110px) rem(72px);
+  margin-top: rem(56px);
+  background-color: #fff;
+  border-radius: rem(40px);
+
+  & label {
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    border: solid 2px #c1c1c1;
+  }
+
+  & input[type='radio'] {
+    display: none;
+
+    &:checked ~ label {
+      background-color: var(--colorYellow);
+    }
+
+    &:disabled:not(.ToolInput input[type='radio']:checked) {
+      pointer-events: none;
+
+      & ~ label {
+        color: #999;
+        cursor: default;
+        background-color: #ccc;
+      }
+    } 
+  }
+
+  & .ToolInput__step {
+    line-height: 1;
+    text-align: center;
+
+    & > span {
+      font-weight: bold;
+    }
+  }
+
+  & .ToolInput__stepCurrent {
+    font-size: rem(37px);
+  }
+
+  & .ToolInput__stepTotal {
+    font-size: rem(20px);
+
+    &::before {
+      display: inline-block;
+      margin-left: rem(-5px);
+      content: '/';
+    }
+  }
+
+  & .ToolInput__title {
+    position: relative;
+    max-width: rem(580px);
+    padding-top: rem(48px);
+    padding-bottom: rem(48px);
+    margin-top: rem(40px);
+    margin-right: auto;
+    margin-left: auto;
+    font-size: rem(20px);
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--colorYellow);
+    border-radius: rem(10px);
+
+    & > span {
+      display: block;
+    }
+  }
+
+  & .ToolInput__button {
+    margin-top: rem(40px);
+    text-align: center;
+
+    & .Button + .Button {
+      margin-left: rem(16px);
+    }
+  }
+}
+
+@media (--md) {
+  .ToolInput {
+    padding: rem(32px) rem(10px);
+    margin-top: rem(48px);
+    margin-right: rem(10px);
+    margin-left: rem(10px);
+    background-color: #fff;
+    border-radius: rem(10px);
+
+    & .ToolInput__title {
+      position: relative;
+      padding-top: rem(24px);
+      padding-right: rem(8px);
+      padding-bottom: rem(16px);
+      padding-left: rem(8px);
+      font-size: rem(18px);
+
+      &::before {
+        top: rem(-55px);
+        width: rem(45px);
+        height: rem(77px);
+      }
+    }
+
+    & .ToolInput__button {
+      margin-top: rem(30px);
+
+      & .Button + .Button {
+        margin-top: rem(16px);
+        margin-left: 0;
+      }
+    }
+  }
+}

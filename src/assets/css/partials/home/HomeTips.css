@@ -1,0 +1,9 @@
+.HomeTips {
+  margin-top: rem(104px);
+}
+
+@media (--md) {
+  .HomeTips {
+    margin-top: 0;
+  }
+}

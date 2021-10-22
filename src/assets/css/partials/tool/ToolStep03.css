@@ -1,0 +1,49 @@
+.ToolStep03 {
+  & .ToolStep03__input {
+    & label {
+      display: block;
+      padding-top: rem(24px);
+      padding-bottom: rem(24px);
+      border-radius: 10px;
+
+      &:focus {
+        outline: 1px dotted #212121;
+        outline: 5px auto -webkit-focus-ring-color;
+      }
+    }
+  }
+
+  & .ToolStep03__inputInner {
+    max-width: rem(240px);
+    margin-top: rem(56px);
+    margin-right: auto;
+    margin-left: auto;
+
+    & > div + div {
+      margin-top: rem(24px);
+    }
+  }
+
+  & .ToolStep03__inputText {
+    margin-top: rem(16px);
+    text-align: center;
+  }
+}
+
+@media (--md) {
+  .ToolStep03 {
+    padding-top: rem(55px);
+
+    & .ToolStep03__inputInner {
+      margin-top: rem(40px);
+
+      & > div + div {
+        margin-top: rem(16px);
+      }
+    }
+
+    & .ToolStep03__inputText {
+      font-size: rem(12px);
+    }
+  }
+}

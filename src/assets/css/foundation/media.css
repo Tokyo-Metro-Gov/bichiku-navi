@@ -1,0 +1,7 @@
+@custom-media --sm (width <= 415px);
+
+@custom-media --md (width <= 1000px);
+
+@custom-media --lg (width <= 1280px);
+
+@custom-media --motionOK (prefers-reduced-motion: no-preference);

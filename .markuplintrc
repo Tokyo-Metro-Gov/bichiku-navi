@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "class-naming": "/[a-z{}]+(?:__[a-z]+)?(?:-[a-z]+)?/" 
+  },
+  "parser": {
+      ".vue$": "@markuplint/vue-parser"
+  },
+  "specs": ["@markuplint/vue-spec"]
+}

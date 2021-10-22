@@ -1,0 +1,48 @@
+html[data-theme='black'] {
+  --color: black;
+
+  color: yellow;
+  background-color: var(--color);
+
+  & .ToolResult,
+  & .TipsSingleOthers,
+  & .PageMapDetail,
+  & .PageTool,
+  & .HomeTool,
+  & .GlobalHeader {
+    background-color: var(--color);
+  }
+
+  & .MapDetailDocuments,
+  & .MapIndexCities,
+  & .BaloonTitle,
+  & .Button__link,
+  & .ToolInput,
+  & .ToolResult__itemList,
+  & .ToolResult__shareList > li:last-child,
+  & .TipsSingle__lead,
+  & .TipsSingle__titleWrap {
+    color: #000;
+  }
+
+  & .TipsSingle a,
+  & .TipsSingle blockquote {
+    color: yellow;
+  }
+
+  & .HomeTool__input .Button__link {
+    color: #fff;
+  }
+
+  & .ToolResult__title {
+    &::before,
+    &::after {
+      border-color: yellow;
+    }
+  }
+
+  & .GlobalFooter__pageTop {
+    --startColor: var(--color);
+    --stopColor: var(--color);
+  }
+}

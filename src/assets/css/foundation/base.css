@@ -1,0 +1,98 @@
+html {
+  font-family: var(--fontFamily);
+  font-size: var(--fontSizeBase);
+  color: var(--colorFontBase);
+}
+
+@media (--md) {
+  html {
+    padding-top: rem(70px);
+  }
+}
+
+/* @media (--motionOK) {
+  html {
+    scroll-behavior: smooth;
+  }
+} */
+
+body {
+  line-height: 1.6;
+  word-break: normal;
+}
+
+table {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ol {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+svg {
+  vertical-align: bottom;
+}
+
+iframe {
+  vertical-align: bottom;
+}
+
+em {
+  font-style: normal;
+  font-weight: bolder;
+}
+
+a {
+  color: currentColor;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+input[name='name'],
+input[name='hours'],
+input[name='number'],
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+textarea {
+  box-sizing: border-box;
+  padding: rem(16px);
+  font-size: 1rem;
+  border: solid 1px #b4b4b4;
+  border-radius: 5px;
+
+  &:focus-visible {
+    border-color: #000;
+    outline: none;
+  }
+}
+
+textarea {
+  width: 100%;
+}
+
+
+.app-fade-enter,
+.app-fade-leave-to {
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+}
+
+.app-fade-enter-to,
+.app-fade-leave {
+  opacity: 1;
+  transition: opacity 0.25s ease-out;
+}

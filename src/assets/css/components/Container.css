@@ -1,0 +1,28 @@
+.Container {
+  --width: rem(960px);
+
+  box-sizing: border-box;
+  max-width: var(--width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.Container.-xl {
+  --width: rem(1200px);
+}
+
+.Container.-l {
+  --width: rem(1160px);
+}
+
+.Container.-s {
+  --width: rem(800px);
+}
+
+.Container.-xs {
+  --width: rem(690px);
+}
+
+.Container.-xxs {
+  --width: rem(560px);
+}

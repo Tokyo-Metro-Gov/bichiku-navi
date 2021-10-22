@@ -1,0 +1,61 @@
+.SiteMapBlock {
+  margin-top: rem(56px);
+
+  & p {
+    margin-top: rem(8px);
+    font-size: rem(14px);
+    line-height: 2;
+  }
+
+  & + .SiteMapBlock {
+    margin-top: rem(72px);
+  }
+
+  & .SitemapList {
+    & a {
+      padding-top: rem(4px);
+      font-size: rem(14px);
+    }
+
+    & a::before {
+      content: '\0226b';
+    }
+
+    & li {
+      margin-top: rem(10px);
+    }
+
+    & li > ul {
+      padding-bottom: 1rem;
+      padding-left: 1.5rem;
+
+      & li {
+        list-style: disc;
+
+        & a {
+          text-decoration: none;
+
+          &:hover {
+            color: gray;
+          }
+        }
+
+        & > a::before {
+          content: none !important;
+        }
+      }
+    }
+  }
+}
+
+@media (--md) {
+  .SiteMapBlock {
+    padding-right: rem(10px);
+    padding-left: rem(10px);
+    margin-top: rem(48px);
+
+    & .SitemapList {
+      display: block;
+    }
+  }
+}

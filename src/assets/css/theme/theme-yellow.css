@@ -1,0 +1,35 @@
+html[data-theme='yellow'] {
+  --color: yellow;
+
+  color: #000;
+  background-color: var(--color);
+
+  & .GlobalHeader {
+    background-color: var(--color);
+  }
+
+  & .HomeTool {
+    background-color: var(--color);
+  }
+
+  & .PageTool {
+    background-color: var(--color);
+  }
+
+  & .PageMapDetail {
+    background-color: var(--color);
+  }
+
+  & .TipsSingleOthers {
+    background-color: var(--color);
+  }
+
+  & .ToolResult {
+    background-color: var(--color);
+  }
+
+  & .GlobalFooter__pageTop {
+    --startColor: var(--color);
+    --stopColor: var(--color);
+  }
+}
