@@ -594,11 +594,11 @@ export default {
               if (familyLength <= 5) {
                 quantity = 3
               } else {
-                quantity = 7
+                quantity = 6
               }
             } else if (isHighRate) {
               if (familyLength <= 5) {
-                quantity = 6
+                quantity = 7
               } else {
                 quantity = 14
               }
