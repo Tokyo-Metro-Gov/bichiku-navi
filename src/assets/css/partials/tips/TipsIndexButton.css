@@ -1,0 +1,10 @@
+.TipsIndexButton {
+  margin-top: rem(72px);
+  text-align: center;
+}
+
+@media (--md) {
+  .TipsIndexButton {
+    margin-top: rem(64px);
+  }
+}

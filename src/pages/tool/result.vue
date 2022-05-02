@@ -2,10 +2,9 @@
 {
   "ja": {
     "meta": {
-      "description": "あなたのご家庭で必要な1週間分の備蓄品リスト"
+      "description": "あなたのご家庭で必要な備蓄品リスト"
     },
     "title01": "<span>あなたのご家庭で必要な</span>備蓄品リスト",
-    "yahoo": "Yahoo!ショッピング",
     "text01": "一緒に住んでいる人の人数や性別、年齢を踏まえて、備えておくべき食料や日用品をリストアップしました。できるところから取り組みましょう！",
     "text02": "結果をシェアする",
     "text03": "印刷する",
@@ -17,13 +16,14 @@
     "text09": "必要な数量",
     "text10": "ネットで購入する",
     "text11": "大切なペットの分も、備蓄をしよう",
-    "text13": "【東京備蓄ナビ】あなたのご家庭で必要な備蓄品リスト"
+    "text12": "Amazon、Amazon.co.jpおよびそれらのロゴは、Amazon.com, Inc.またはその関連会社の商標または登録商標です。",
+    "text13": "【東京備蓄ナビ】あなたのご家庭で必要な備蓄品リスト",
+    "text14": "↓ 品目名をクリックすると該当の品目欄へジャンプします ↓"
   },
   "en": {
     "meta": {
-      "description": "One week of stockpiles for your home"
+      "description": "The list of suitable emergency stockpiles for your family"
     },
-    "yahoo": "Yahoo! Shopping",
     "title01": "The list of suitable emergency stockpiles for your family.",
     "text01": "This list is estimated based on the genders and ages of your family.",
     "text02": "Share the result",
@@ -36,7 +36,9 @@
     "text09": "Required quantity",
     "text10": "Buy on the internet",
     "text11": "Stockpile for your precious pets",
-    "text13": "【Tokyo Stockpiling Navi】The list of suitable emergency stockpiles for your family."
+    "text12": "“Amazon”, “Amazon.co.jp” and their logos are trademarks of Amazon.com, Inc. and its affiliates.",
+    "text13": "【Tokyo Stockpiling Navi】The list of suitable emergency stockpiles for your family.",
+    "text14": "↓ Click on the name of the stockpile to see the detail. ↓"
   }
 }
 </i18n>
@@ -204,6 +206,11 @@
             class="ToolResult__titleSub ToolResult__lead"
             v-html="$t('text04')"
           />
+          
+          <h3
+            class="ToolResult__titleSub ToolResult__lead"
+            v-html="$t('text14')"
+          />
 
           <ul class="ToolResult__overviewList">
             <template
@@ -213,6 +220,7 @@
                 :key="`stockpile${index}`"
                 class="ToolResult__overviewListItem"
                 tabindex="0"
+                @click="jumpStockpile(index)"
               >
                 {{ item[$i18n.locale] }}： {{ quantity }}
                 {{ unit[$i18n.locale] }}
@@ -231,6 +239,7 @@
                   :key="`petStockpile${index}`"
                   class="ToolResult__overviewListItem"
                   tabindex="0"
+                  @click="jumpPetStockpile(index)"
                 >
                   {{ item[$i18n.locale] }}
                 </li>
@@ -253,7 +262,7 @@
                 { id, category, item, quantity, unit, url, description }, index
               ) in stockpileList"
             >
-              <li :key="`stockpile${index}`">
+              <li :key="`stockpile${index}`" :id="`stockpile${index}`">
                 <div class="ToolResult__listItem" tabindex="0">
                   <div class="ToolResult__listItemInner">
                     <div class="ToolResult__listItemImg">
@@ -315,7 +324,15 @@
                             })
                           "
                         >
-                          {{ $t('yahoo') }}
+                          <img
+                            src="../../assets/images/tool/result/logo-yahoo.png"
+                            srcset="
+                              ~/assets/images/tool/result/logo-yahoo.png    1x,
+                              ~/assets/images/tool/result/logo-yahoo@2x.png 2x
+                            "
+                            alt="Yahoo!ショッピング"
+                            width="140"
+                          />
                         </div>
 
                         <div
@@ -330,7 +347,15 @@
                             })
                           "
                         >
-                          Rakuten
+                          <img
+                            src="../../assets/images/tool/result/logo-rakuten.png"
+                            srcset="
+                              ~/assets/images/tool/result/logo-rakuten.png    1x,
+                              ~/assets/images/tool/result/logo-rakuten@2x.png 2x
+                            "
+                            alt="Rakuten"
+                            width="140"
+                          />
                         </div>
 
                         <div
@@ -345,7 +370,15 @@
                             })
                           "
                         >
-                          Amazon
+                          <img
+                            src="../../assets/images/tool/result/logo-amazon.png"
+                            srcset="
+                              ~/assets/images/tool/result/logo-amazon.png    1x,
+                              ~/assets/images/tool/result/logo-amazon@2x.png 2x
+                            "
+                            alt="Amazon"
+                            width="140"
+                          />
                         </div>
                       </div>
 
@@ -385,7 +418,7 @@
                     { id, category, item, url, description }, index
                   ) in petStockpileList"
                 >
-                  <li :key="`petStockpile${index}`">
+                  <li :key="`petStockpile${index}`" :id="`petStockpile${index}`">
                     <div class="ToolResult__listItem" tabindex="0">
                       <div class="ToolResult__listItemInner">
                         <div class="ToolResult__listItemImg">
@@ -417,6 +450,10 @@
                             {{ item[$i18n.locale] }}
                           </div>
 
+                          <!-- <div class="ToolResult__listItemQuantity">
+                          <span>必要な数量： {{ unit.ja }}</span>
+                        </div> -->
+
                           <p class="ToolResult__listItemText">
                             {{ description[$i18n.locale] }}
                           </p>
@@ -433,7 +470,15 @@
                             tabindex="0"
                             @click="() => $modal.show(`yahoo${id}`)"
                           >
-                            {{ $t('yahoo') }}
+                            <img
+                              src="../../assets/images/tool/result/logo-yahoo.png"
+                              srcset="
+                                ~/assets/images/tool/result/logo-yahoo.png    1x,
+                                ~/assets/images/tool/result/logo-yahoo@2x.png 2x
+                              "
+                              alt="Yahoo!ショッピング"
+                              width="140"
+                            />
                           </div>
 
                           <div
@@ -441,7 +486,15 @@
                             tabindex="0"
                             @click="() => $modal.show(`rakuten${id}`)"
                           >
-                            Rakuten
+                            <img
+                              src="../../assets/images/tool/result/logo-rakuten.png"
+                              srcset="
+                                ~/assets/images/tool/result/logo-rakuten.png    1x,
+                                ~/assets/images/tool/result/logo-rakuten@2x.png 2x
+                              "
+                              alt="Rakuten"
+                              width="140"
+                            />
                           </div>
 
                           <div
@@ -449,7 +502,15 @@
                             tabindex="0"
                             @click="() => $modal.show(`amazon${id}`)"
                           >
-                            Amazon
+                            <img
+                              src="../../assets/images/tool/result/logo-amazon.png"
+                              srcset="
+                                ~/assets/images/tool/result/logo-amazon.png    1x,
+                                ~/assets/images/tool/result/logo-amazon@2x.png 2x
+                              "
+                              alt="Amazon"
+                              width="140"
+                            />
                           </div>
                         </div>
 
@@ -477,6 +538,9 @@
               </ul>
             </section>
           </template>
+          <p class="ToolResult__credit">
+            {{ $t('text12') }}
+          </p>
         </div>
       </section>
       <!-- /.ToolResultDetails -->
@@ -663,10 +727,10 @@ export default {
 
       if (this.$i18n.locale === 'ja') {
         message = '東京備蓄ナビで自分にあった備蓄を調べてみよう'
-        url = '***'
+        url = 'https://www.bichiku.metro.tokyo.lg.jp/tool/'
       } else {
         message = 'Find out the adequate stockpiling for you'
-        url = '***'
+        url = 'https://www.bichiku.metro.tokyo.lg.jp/en/tool/'
       }
 
       shareText += encodeText(`
@@ -736,6 +800,16 @@ ${item[this.$i18n.locale]} ${quantity}${unit[this.$i18n.locale]}`
   methods: {
     printResult() {
       window.print()
+    },
+    jumpStockpile(index){
+      document
+          .querySelector(`#stockpile${index}`)
+          .scrollIntoView({behavior: "smooth"})
+    },
+    jumpPetStockpile(index){
+      document
+          .querySelector(`#petStockpile${index}`)
+          .scrollIntoView({behavior: "smooth"})
     },
   },
 }

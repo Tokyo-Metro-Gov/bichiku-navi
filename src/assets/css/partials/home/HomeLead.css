@@ -1,6 +1,22 @@
 .HomeLead {
   & .HomeLead__button {
+    display: flex;
+    justify-content: space-between;
     margin-top: rem(64px);
-    text-align: center;
+  }
+}
+
+
+@media (--md) {
+  .HomeLead {
+    & .HomeLead__button {
+      display: block;
+      margin-top: rem(24px);
+      text-align: center;
+    }
+
+    & .HomeLead__button .Button + .Button {
+      margin-top: rem(24px);
+    }
   }
 }

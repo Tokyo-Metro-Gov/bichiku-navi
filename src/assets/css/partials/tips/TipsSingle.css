@@ -1,0 +1,290 @@
+.TipsSingle {
+  & .TipsSingle__titleWrap {
+    position: relative;
+    padding: rem(24px) rem(56px);
+    line-height: 1;
+    background-color: var(--colorYellow);
+    border-radius: 10px;
+
+    &::before {
+      position: absolute;
+      top: rem(-40px);
+      left: 50%;
+      display: block;
+      width: rem(60px);
+      height: rem(60px);
+      content: '';
+      background-image: image-set(
+        url('~assets/images/tips/single/img-01.png') 1x,
+        url('~assets/images/tips/single/img-01@2x.png') 2x
+      );
+      background-size: contain;
+      transform: translateX(-50%);
+    }
+  }
+
+  & .TipsSingle__title {
+    margin-top: rem(8px);
+    font-size: rem(26px);
+    line-height: 1.5;
+  }
+
+  & .TipsSingle__date {
+    font-size: rem(20px);
+  }
+
+  & .TipsSingle__visual {
+    margin-top: rem(24px);
+  }
+
+  & .TipsSingle__visualText {
+    padding-right: rem(16px);
+    padding-left: rem(16px);
+    margin-top: rem(24px);
+    font-size: rem(14px);
+  }
+
+  & .TipsSingle__lead {
+    padding: rem(32px);
+    margin-top: rem(48px);
+    line-height: 2;
+    background-color: var(--colorLGray);
+  }
+
+  & .TipsSingle__block {
+    padding-bottom: rem(64px);
+    margin-top: rem(64px);
+    margin-bottom: rem(80px);
+    border-bottom: rgb(224, 224, 224) dotted 5px;
+
+    & + .TipsSingle__block {
+      padding-bottom: rem(72px);
+      margin-top: rem(16px);
+    }
+
+    & h2:not(.TipsSingle__recipeTitle) {
+      padding-bottom: rem(16px);
+      margin-top: rem(40px);
+      margin-bottom: rem(16px);
+      font-size: rem(22px);
+      line-height: 1;
+      border-bottom: 6px solid var(--colorYellow);
+    }
+
+    & h3 {
+      margin-top: rem(40px);
+      font-size: rem(18px);
+      line-height: 1;
+    }
+
+    & h4 {
+      margin-top: rem(40px);
+      font-size: rem(18px);
+    }
+
+    & img {
+      margin-top: rem(24px);
+    }
+
+    & p {
+      margin-top: rem(8px);
+      line-height: 2;
+
+      & + p {
+        margin-top: rem(24px);
+      }
+    }
+
+    & a {
+      color: var(--colorAqua);
+    }
+
+    & ul,
+    & ol,
+    & dl {
+      margin-top: rem(16px);
+      margin-right: rem(56px);
+      margin-left: rem(24px);
+      line-height: 1.8;
+    }
+
+    & ol,
+    & ul {
+      & > li {
+        margin-left: rem(20px);
+      }
+    }
+
+    & ul {
+      list-style-type: disc;
+    }
+
+    & dl {
+      & > dt {
+        font-weight: bold;
+      }
+
+      & > dd {
+        & > ul {
+          margin-top: 0;
+        }
+
+      }
+    }
+
+    & ol {
+      list-style-type: decimal;
+    }
+
+    & ul > li + li,
+    & ol > li + li {
+      margin-top: rem(8px);
+    }
+
+    & blockquote {
+      padding: rem(32px);
+      margin: rem(64px) rem(56px);
+      line-height: 2;
+      color: #717171;
+      border-top: 1px solid #c1c1c1;
+      border-bottom: 1px solid #c1c1c1;
+
+      & cite {
+        display: block;
+        margin-top: rem(16px);
+      } 
+    }
+  }
+
+  & .TipsSingle__recipeTitle {
+    display: inline-block;
+    padding: rem(16px) rem(20px) rem(16px) rem(24px);
+    margin-top: rem(64px);
+    font-size: rem(18px);
+    line-height: 1;
+    color: #fff;
+    letter-spacing: 0.3rem;
+    background-color: var(--colorNavy);
+    border-radius: 10px;
+  }
+
+  & .TipsSingle__credit {
+    padding: rem(48px) rem(56px);
+    margin-top: rem(96px);
+    border: 8px solid var(--colorYellow);
+    border-radius: 10px;
+
+    & dl + dl {
+      padding-top: rem(24px);
+      margin-top: rem(24px);
+      border-top: 1px solid #c1c1c1;
+    }
+
+    & dl > dt {
+      text-align: center;
+    }
+
+    & dl > dd {
+      margin-top: rem(12px);
+      font-size: rem(14px);
+      text-align: center;
+    }
+  }
+
+  & .TipsSingle__creditImg {
+    max-width: 300px;
+    margin-right: auto;
+    margin-bottom: rem(8px);
+    margin-left: auto;
+
+    & img {
+      border-radius: 5px;
+    }
+  }
+}
+
+@media (--md) {
+  .TipsSingle {
+    padding-right: rem(10px);
+    padding-left: rem(10px);
+
+    & .TipsSingle__titleWrap {
+      padding: rem(16px);
+      margin-top: rem(48px);
+      line-height: initial;
+    }
+
+    & .TipsSingle__recipeTitle {
+      padding-top: 8px;
+      line-height: 2;
+      letter-spacing: 0.1rem;
+    }
+
+    & p {
+      font-size: rem(16px);
+    }
+
+    & .TipsSingle__title {
+      margin-top: rem(4px);
+      font-size: rem(22px);
+    }
+
+    & .TipsSingle__date {
+      font-size: rem(14px);
+    }
+
+    & .TipsSingle__visual {
+      margin-top: rem(0);
+    }
+
+    & .TipsSingle__visualText {
+      padding-right: 0;
+      padding-left: 0;
+      margin-top: rem(16px);
+      font-size: rem(12px);
+    }
+
+    & .TipsSingle__lead {
+      padding: rem(12px) rem(16px);
+      margin-top: rem(32px);
+      font-size: rem(14px);
+    }
+
+    & .TipsSingle__block {
+      font-size: rem(14px);
+
+      & h2 {
+        padding-bottom: rem(8px);
+        font-size: rem(20px);
+        line-height: initial;
+      }
+
+      & h3 {
+        font-size: rem(18px);
+        line-height: initial;
+      }
+
+      & ul,
+      & ol {
+        margin-top: rem(16px);
+        margin-right: rem(20px);
+        margin-left: rem(20px);
+      }
+
+      & blockquote {
+        padding: rem(32px) 0;
+        margin: rem(40px) rem(10px);
+
+        & cite {
+          margin-top: rem(8px);
+        } 
+      }
+    }
+
+    & .TipsSingle__credit {
+      padding: rem(24px) rem(16px);
+      margin-top: rem(56px);
+      border-width: 4px;
+    }
+  }
+}

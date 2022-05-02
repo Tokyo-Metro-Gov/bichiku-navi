@@ -1,0 +1,53 @@
+{
+  "name": "tokyo-bichiku-navi",
+  "private": true,
+  "scripts": {
+    "dev": "node ./make.tips.config.js && nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{.css}\" --ignore-path .gitignore",
+    "lint": "npm run lint:js && npm run lint:style"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint",
+    "*.{css}": "stylelint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.5",
+    "@nuxtjs/gtm": "^2.4.0",
+    "core-js": "^3.8.3",
+    "nuxt": "^2.14.12",
+    "nuxt-i18n": "^6.20.3",
+    "vue-cookies": "^1.7.4",
+    "vue-js-modal": "^2.0.0-rc.6",
+    "vue-localstorage": "^0.6.2"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^5.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.5.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
+    "markuplint": "^1.5.0",
+    "postcss-rem": "^1.1.5",
+    "prettier": "^2.2.1",
+    "puppeteer": "^8.0.0",
+    "stylelint": "^13.9.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recess-order": "^2.3.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "vue-sfc-parser": "^0.1.2"
+  }
+}

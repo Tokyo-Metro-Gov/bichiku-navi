@@ -1,0 +1,27 @@
+.TipsSingleOthers {
+  padding-top: rem(64px);
+  margin-top: rem(56px);
+  background-color: var(--colorLYellow);
+
+  & .TipsSingleOthers__list {
+    max-width: rem(1000px);
+    margin-top: rem(24px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (--md) {
+  .TipsSingleOthers {
+    padding-top: rem(40px);
+
+    & .TipsSingleOthers__list {
+      grid-template-columns: initial;
+      grid-row-gap: rem(8px);
+      padding-right: rem(30px);
+      padding-left: rem(30px);
+      margin-top: rem(24px);
+      text-align: center;
+    }
+  }
+}

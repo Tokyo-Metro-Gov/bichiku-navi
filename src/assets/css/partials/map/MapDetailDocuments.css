@@ -1,0 +1,71 @@
+.MapDetailDocuments {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: rem(36px);
+  margin-left: rem(-4px);
+
+  & dl {
+    display: flex;
+    flex-basis: calc(50% - 4px);
+    margin-top: rem(4px);
+    margin-left: rem(4px);
+    text-align: center;
+  }
+
+  & dt {
+    flex-basis: rem(140px);
+    padding-top: rem(16px);
+    padding-bottom: rem(16px);
+    font-size: rem(18px);
+    font-weight: bold;
+    background-color: var(--colorYellow);
+  }
+
+  & dd {
+    /* flex-basis: rem(260px); */
+    flex-grow: 1;
+    padding-top: rem(16px);
+    padding-bottom: rem(16px);
+    background-color: #fff;
+  }
+
+  & dd > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: rem(16px);
+    padding-bottom: rem(16px);
+    margin-top: rem(-16px);
+    margin-bottom: rem(-16px);
+    text-decoration: none;
+  }
+
+  & dd > a:hover {
+    opacity: 0.5;
+  }
+
+  & dd > a::before {
+    width: 20px;
+    height: 20px;
+    margin-right: rem(8px);
+    content: url('~assets/images/map/icn-link.svg')
+  }
+}
+
+@media (--md) {
+  .MapDetailDocuments {
+    display: block;
+    padding-right: rem(10px);
+    padding-left: rem(10px);
+    margin-left: 0;
+
+    & dl {
+      margin-left: 0;
+    }
+
+    & dt {
+      flex-basis: rem(120px);
+      font-size: rem(16px);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.HomeNotFound {
+  margin-bottom: rem(80px);
+}
+
+@media (--md) {
+  .HomeNotFound {
+    margin-bottom: 0;
+  }
+}

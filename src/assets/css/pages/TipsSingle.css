@@ -1,0 +1,11 @@
+.PageTipsSingle {
+  & .GlobalFooter__pageTop {
+    --startColor: var(--colorLYellow);
+  }
+}
+
+@media (--md) {
+  .PageTipsSingle {
+    padding-bottom: rem(89px);
+  }
+}

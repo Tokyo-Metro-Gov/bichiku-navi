@@ -1,0 +1,63 @@
+.TipsList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: rem(16px);
+  margin-left: rem(-40px);
+
+  & a {
+    text-decoration: none;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+
+  & .TipsList__item {
+    flex-basis: calc(33% - rem(40px));
+    margin-top: rem(32px);
+    margin-left: rem(40px);
+  }
+
+  & .TipsList__itemTitle {
+    margin-top: rem(8px) ;
+  }
+
+  & .TipsList__itemDate {
+    margin-top: rem(8px) ;
+    font-size: rem(14px) ;
+  }
+}
+
+@media (--md) {
+  .TipsList {
+    display: block;
+    padding-right: rem(10px);
+    padding-left: rem(10px);
+    margin-left: 0;
+
+    & a {
+      text-decoration: none;
+    }
+
+    & a:hover {
+      text-decoration: underline;
+    }
+
+    & .TipsList__item {
+      margin-left: 0;
+    }
+
+    & img {
+      width: 100%;
+    }
+
+    & .TipsList__itemTitle {
+      margin-top: rem(8px) ;
+    }
+
+    & .TipsList__itemDate {
+      margin-top: rem(8px) ;
+      font-size: rem(14px) ;
+    }
+  }
+}

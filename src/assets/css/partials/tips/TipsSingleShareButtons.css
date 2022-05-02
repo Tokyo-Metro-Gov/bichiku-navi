@@ -1,0 +1,52 @@
+.TipsSingleShare {
+  position: relative;
+  padding-top: rem(48px);
+  padding-bottom: rem(32px);
+  margin-top: rem(136px);
+  background-color: var(--colorLGray);
+
+  &::before {
+    position: absolute;
+    top: rem(-80px);
+    left: 50%;
+    display: block;
+    width: rem(56px);
+    height: rem(101px);
+    content: '';
+    background-image: image-set(
+      url('~assets/images/tips/single/img-03.png') 1x,
+      url('~assets/images/tips/single/img-03@2x.png') 2x
+    );
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    transform: translateX(-50%);
+  }
+
+  & .TipsSingleShare__text {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  & .TipsSingleShare__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: rem(24px);
+
+    & > li + li {
+      margin-left: rem(16px);
+    }
+  }
+}
+
+@media (--md) {
+  .TipsSingleShare {
+    margin-right: rem(10px);
+    margin-left: rem(10px);
+
+    & .TipsSingleShare__text {
+      font-size: rem(14px);
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.TipsSingleFloatButton {
+  position: fixed;
+  right: rem(24px);
+  bottom: rem(24px);
+  z-index: 2;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: var(--colorYellow);
+  border-radius: rem(20px);
+
+
+  & .TipsSingleFloatButton__link {
+    position: relative;
+    display: block;
+    padding: rem(32px) rem(40px) rem(16px);
+    font-size: rem(18px);
+    font-weight: bold;
+    text-decoration: none;
+
+    &::before {
+      position: absolute;
+      top: rem(-64px);
+      left: 50%;
+      width: rem(86px);
+      height: rem(89px);
+      content: '';
+      background-image: image-set(
+        url('~assets/images/tips/single/img-02.png') 1x,
+        url('~assets/images/tips/single/img-02@2x.png') 2x
+      );
+      background-size: cover;
+      transform: translateX(-50%);
+    }
+  }
+
+  & .TipsSingleFloatButton__button {
+    display: block;
+    padding: rem(8px);
+    margin-top: rem(8px);
+    font-size: rem(17px);
+    background-color: #fff;
+    border-radius: rem(10px);
+  }
+}
+
+@media (--md) {
+  .TipsSingleFloatButton {
+    right: initial;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 0;
+
+    & .TipsSingleFloatButton__link {
+      padding: rem(8px) rem(30px) rem(8px) rem(80px);
+      font-size: rem(16px);
+
+      &::before {
+        top: 50%;
+        left: 0;
+        width: rem(60px);
+        height: rem(62px);
+        transform: translateY(-50%);
+      }
+    }
+
+    & .TipsSingleFloatButton__button {
+      font-size: rem(15px);
+    }
+  }}

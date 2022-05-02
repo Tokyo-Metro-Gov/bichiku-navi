@@ -62,7 +62,7 @@
     max-width: rem(580px);
     padding-top: rem(48px);
     padding-bottom: rem(48px);
-    margin-top: rem(40px);
+    margin-top: rem(112px);
     margin-right: auto;
     margin-left: auto;
     font-size: rem(20px);
@@ -70,6 +70,23 @@
     text-align: center;
     background-color: var(--colorYellow);
     border-radius: rem(10px);
+
+    &::before {
+      position: absolute;
+      top: rem(-75px);
+      left: 50%;
+      display: block;
+      width: rem(61px);
+      height: rem(104px);
+      content: '';
+      background-image: image-set(
+        url('~assets/images/tool/img-01.png') 1x,
+        url('~assets/images/tool/img-01@2x.png') 2x
+      );
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform: translateX(-50%);
+    }
 
     & > span {
       display: block;
@@ -101,6 +118,7 @@
       padding-right: rem(8px);
       padding-bottom: rem(16px);
       padding-left: rem(8px);
+      margin-top: rem(64px);
       font-size: rem(18px);
 
       &::before {

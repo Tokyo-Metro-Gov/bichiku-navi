@@ -993,7 +993,7 @@ export const stockpileList = [
     },
     item: {
       ja: '懐中電灯',
-      en: 'Blackout (lighting)',
+      en: 'Flashlight',
     },
     unit: {
       ja: '灯',
@@ -1078,7 +1078,7 @@ export const stockpileList = [
     id: 32,
     category: {
       ja: '停電・ガス停止（防寒）',
-      en: 'Water outage (sanitary measures)',
+      en: 'Blackout/gas outage (cold protection)',
     },
     item: {
       ja: '使い捨てカイロ',
@@ -1196,7 +1196,7 @@ export const stockpileList = [
     },
     item: {
       ja: '布製ガムテープ',
-      en: 'Tools',
+      en: 'Cloth packing tape',
     },
     unit: {
       ja: '巻',
@@ -1226,7 +1226,7 @@ export const stockpileList = [
     },
     unit: {
       ja: '組',
-      en: 'pair',
+      en: 'pairs',
     },
     description: {
       ja:
@@ -1507,7 +1507,7 @@ export const stockpileList = [
     },
     unit: {
       ja: '食',
-      en: 'Babies/infants',
+      en: 'servings',
     },
     description: {
       ja:
@@ -1617,11 +1617,11 @@ export const stockpileList = [
     },
     item: {
       ja: 'おむつ',
-      en: 'Babies/infants',
+      en: 'Diapers',
     },
     unit: {
       ja: '個',
-      en: 'Babies/infants',
+      en: 'diapers',
     },
     description: {
       ja:
@@ -1655,7 +1655,7 @@ export const stockpileList = [
     },
     item: {
       ja: 'お尻拭き',
-      en: 'Baby wipes',
+      en: 'Baby wapes',
     },
     unit: {
       ja: 'パック',
@@ -2032,7 +2032,7 @@ export const stockpileList = [
     },
     item: {
       ja: 'ヘッドライト',
-      en: 'Blackout (lighting)',
+      en: 'Headlights',
     },
     unit: {
       ja: '個',

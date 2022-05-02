@@ -1,0 +1,5 @@
+.PageMapIndex {
+  & .PageBlock__text {
+    text-align: center;
+  }
+}
