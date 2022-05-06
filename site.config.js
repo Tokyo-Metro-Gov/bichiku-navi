@@ -6,8 +6,8 @@ export const ROUTER_BASE_DIR = process.env.ROUTER_BASE_DIR || '/'
 export const BREAK_POINT = '(max-width: 1000px)'
 export const SITE_URL = 'https://example.com'
 export const SITE_NAME = {
-  ja: '備蓄ナビ',
-  en: 'Stockpiling Navi',
+  ja: '***',
+  en: '***',
 }
 export const POSTAL_CODE = {
   ja: '***',

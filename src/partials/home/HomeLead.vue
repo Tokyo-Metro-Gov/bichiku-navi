@@ -18,18 +18,6 @@
     <section class="Container -s">
       <h1 class="PageBlock__title">{{ $t('title') }}</h1>
 
-      <div class="PageBlock__img">
-        <img
-          src="~/assets/images/top/lead/img-01.png"
-          srcset="
-            ~/assets/images/top/lead/img-01.png    1x,
-            ~/assets/images/top/lead/img-01@2x.png 2x
-          "
-          alt=""
-          width="101"
-          height="138"
-        />
-      </div>
 
       <div class="Container -xs">
         <p class="PageBlock__text">
@@ -46,13 +34,6 @@
           />
         </div>
 
-        <div class="Button -yellowPale -l">
-          <nuxt-link
-            class="Button__link"
-            :to="localePath($getPath('tips'))"
-            v-html="$t('text03')"
-          />
-        </div>
       </div>
     </section>
   </div>

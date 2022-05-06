@@ -16,8 +16,8 @@
     "text09": "必要な数量",
     "text10": "ネットで購入する",
     "text11": "大切なペットの分も、備蓄をしよう",
-    "text12": "Amazon、Amazon.co.jpおよびそれらのロゴは、Amazon.com, Inc.またはその関連会社の商標または登録商標です。",
-    "text13": "【東京備蓄ナビ】あなたのご家庭で必要な備蓄品リスト",
+    "text12": "",
+    "text13": "あなたのご家庭で必要な備蓄品リスト",
     "text14": "↓ 品目名をクリックすると該当の品目欄へジャンプします ↓"
   },
   "en": {
@@ -36,8 +36,8 @@
     "text09": "Required quantity",
     "text10": "Buy on the internet",
     "text11": "Stockpile for your precious pets",
-    "text12": "“Amazon”, “Amazon.co.jp” and their logos are trademarks of Amazon.com, Inc. and its affiliates.",
-    "text13": "【Tokyo Stockpiling Navi】The list of suitable emergency stockpiles for your family.",
+    "text12": "",
+    "text13": "The list of suitable emergency stockpiles for your family.",
     "text14": "↓ Click on the name of the stockpile to see the detail. ↓"
   }
 }
@@ -324,15 +324,6 @@
                             })
                           "
                         >
-                          <img
-                            src="../../assets/images/tool/result/logo-yahoo.png"
-                            srcset="
-                              ~/assets/images/tool/result/logo-yahoo.png    1x,
-                              ~/assets/images/tool/result/logo-yahoo@2x.png 2x
-                            "
-                            alt="Yahoo!ショッピング"
-                            width="140"
-                          />
                         </div>
 
                         <div
@@ -347,15 +338,6 @@
                             })
                           "
                         >
-                          <img
-                            src="../../assets/images/tool/result/logo-rakuten.png"
-                            srcset="
-                              ~/assets/images/tool/result/logo-rakuten.png    1x,
-                              ~/assets/images/tool/result/logo-rakuten@2x.png 2x
-                            "
-                            alt="Rakuten"
-                            width="140"
-                          />
                         </div>
 
                         <div
@@ -370,15 +352,6 @@
                             })
                           "
                         >
-                          <img
-                            src="../../assets/images/tool/result/logo-amazon.png"
-                            srcset="
-                              ~/assets/images/tool/result/logo-amazon.png    1x,
-                              ~/assets/images/tool/result/logo-amazon@2x.png 2x
-                            "
-                            alt="Amazon"
-                            width="140"
-                          />
                         </div>
                       </div>
 
@@ -470,15 +443,6 @@
                             tabindex="0"
                             @click="() => $modal.show(`yahoo${id}`)"
                           >
-                            <img
-                              src="../../assets/images/tool/result/logo-yahoo.png"
-                              srcset="
-                                ~/assets/images/tool/result/logo-yahoo.png    1x,
-                                ~/assets/images/tool/result/logo-yahoo@2x.png 2x
-                              "
-                              alt="Yahoo!ショッピング"
-                              width="140"
-                            />
                           </div>
 
                           <div
@@ -486,15 +450,6 @@
                             tabindex="0"
                             @click="() => $modal.show(`rakuten${id}`)"
                           >
-                            <img
-                              src="../../assets/images/tool/result/logo-rakuten.png"
-                              srcset="
-                                ~/assets/images/tool/result/logo-rakuten.png    1x,
-                                ~/assets/images/tool/result/logo-rakuten@2x.png 2x
-                              "
-                              alt="Rakuten"
-                              width="140"
-                            />
                           </div>
 
                           <div
@@ -502,15 +457,6 @@
                             tabindex="0"
                             @click="() => $modal.show(`amazon${id}`)"
                           >
-                            <img
-                              src="../../assets/images/tool/result/logo-amazon.png"
-                              srcset="
-                                ~/assets/images/tool/result/logo-amazon.png    1x,
-                                ~/assets/images/tool/result/logo-amazon@2x.png 2x
-                              "
-                              alt="Amazon"
-                              width="140"
-                            />
                           </div>
                         </div>
 

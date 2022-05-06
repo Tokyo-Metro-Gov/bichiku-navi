@@ -71,23 +71,6 @@
     background-color: var(--colorYellow);
     border-radius: rem(10px);
 
-    &::before {
-      position: absolute;
-      top: rem(-75px);
-      left: 50%;
-      display: block;
-      width: rem(61px);
-      height: rem(104px);
-      content: '';
-      background-image: image-set(
-        url('~assets/images/tool/img-01.png') 1x,
-        url('~assets/images/tool/img-01@2x.png') 2x
-      );
-      background-repeat: no-repeat;
-      background-size: contain;
-      transform: translateX(-50%);
-    }
-
     & > span {
       display: block;
     }
