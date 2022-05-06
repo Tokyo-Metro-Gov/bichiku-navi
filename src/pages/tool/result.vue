@@ -727,10 +727,10 @@ export default {
 
       if (this.$i18n.locale === 'ja') {
         message = '東京備蓄ナビで自分にあった備蓄を調べてみよう'
-        url = 'https://www.bichiku.metro.tokyo.lg.jp/tool/'
+        url = '***'
       } else {
         message = 'Find out the adequate stockpiling for you'
-        url = 'https://www.bichiku.metro.tokyo.lg.jp/en/tool/'
+        url = '***'
       }
 
       shareText += encodeText(`
