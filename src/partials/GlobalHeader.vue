@@ -8,6 +8,7 @@
               {{ $siteName[$i18n.locale] }}
             </nuxt-link>
           </div>
+
           <ul class="GlobalHeader__util">
             <li>
               <nuxt-link :to="localePath($getPath('sitemap'))">

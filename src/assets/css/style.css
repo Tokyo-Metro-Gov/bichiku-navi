@@ -34,8 +34,21 @@
 @import './partials/home/HomeTool.css';
 @import './partials/home/HomeTips.css';
 
+/* tips */
+@import './partials/tips/TipsList.css';
+@import './partials/tips/TipsIndexButton.css';
+@import './partials/tips/TipsSingle.css';
+@import './partials/tips/TipsSingleOthers.css';
+@import './partials/tips/TipsSingleFloatButton.css';
+@import './partials/tips/TipsSingleShareButtons.css';
+
 /* link */
 @import './partials/link/LinkBlock.css';
+
+/* map */
+@import './partials/map/MapIndexCities.css';
+@import './partials/map/MapDetailDocuments.css';
+@import './partials/map/MapDetailEmbeded.css';
 
 /* tool */
 @import './partials/tool/ToolInput.css';
@@ -52,6 +65,9 @@
 @import './pages/Home.css';
 @import './pages/Tool.css';
 @import './pages/ToolResult.css';
+@import './pages/MapIndex.css';
+@import './pages/MapDetail.css';
+@import './pages/TipsSingle.css';
 @import './pages/SiteMap.css';
 @import './pages/English.css';
 

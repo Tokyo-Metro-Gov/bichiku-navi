@@ -68,7 +68,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: `${OGP_DIR}/common1.jpg`,
+        content: `${OGP_DIR}/common1.jpeg`,
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
