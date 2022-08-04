@@ -6,6 +6,7 @@
           {{ $siteName[$i18n.locale] }}
         </nuxt-link>
       </div>
+
       <div class="SpGlobalHeader__menu">
         <slot />
       </div>

@@ -18,6 +18,7 @@
     <section class="Container -s">
       <h1 class="PageBlock__title">{{ $t('title') }}</h1>
 
+
       <div class="Container -xs">
         <p class="PageBlock__text">
           {{ $t('text01') }}
@@ -32,6 +33,7 @@
             v-html="$t('text02')"
           />
         </div>
+
       </div>
     </section>
   </div>
