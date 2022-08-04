@@ -62,7 +62,7 @@
     max-width: rem(580px);
     padding-top: rem(48px);
     padding-bottom: rem(48px);
-    margin-top: rem(40px);
+    margin-top: rem(112px);
     margin-right: auto;
     margin-left: auto;
     font-size: rem(20px);
@@ -101,6 +101,7 @@
       padding-right: rem(8px);
       padding-bottom: rem(16px);
       padding-left: rem(8px);
+      margin-top: rem(64px);
       font-size: rem(18px);
 
       &::before {
