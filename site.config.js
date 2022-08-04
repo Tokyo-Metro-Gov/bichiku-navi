@@ -6,8 +6,8 @@ export const ROUTER_BASE_DIR = process.env.ROUTER_BASE_DIR || '/'
 export const BREAK_POINT = '(max-width: 1000px)'
 export const SITE_URL = 'https://example.com'
 export const SITE_NAME = {
-  ja: '東京備蓄ナビ',
-  en: 'Tokyo Stockpiling Navi',
+  ja: '***',
+  en: '***',
 }
 export const POSTAL_CODE = {
   ja: '***',
@@ -45,8 +45,8 @@ const NAVDATA = [
   {
     id: 'toolResult',
     name: {
-      ja: 'あなたのご家庭で必要な１週間分の備蓄品リスト',
-      en: 'One week of stockpiles for your home',
+      ja: 'あなたのご家庭で必要な備蓄品リスト',
+      en: 'stockpiles for your home',
     },
     path: '/tool/result/',
   },

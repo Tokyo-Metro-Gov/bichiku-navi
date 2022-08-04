@@ -5,7 +5,6 @@
       "description": "あなたのご家庭で必要な備蓄品リスト"
     },
     "title01": "<span>あなたのご家庭で必要な</span>備蓄品リスト",
-    "yahoo": "Yahoo!ショッピング",
     "text01": "一緒に住んでいる人の人数や性別、年齢を踏まえて、備えておくべき食料や日用品をリストアップしました。できるところから取り組みましょう！",
     "text02": "結果をシェアする",
     "text03": "印刷する",
@@ -25,7 +24,6 @@
     "meta": {
       "description": "The list of suitable emergency stockpiles for your family"
     },
-    "yahoo": "Yahoo! Shopping",
     "title01": "The list of suitable emergency stockpiles for your family.",
     "text01": "This list is estimated based on the genders and ages of your family.",
     "text02": "Share the result",
@@ -326,7 +324,6 @@
                             })
                           "
                         >
-                          {{ $t('yahoo') }}
                         </div>
 
                         <div
@@ -341,7 +338,6 @@
                             })
                           "
                         >
-                          Rakuten
                         </div>
 
                         <div
@@ -356,7 +352,6 @@
                             })
                           "
                         >
-                          Amazon
                         </div>
                       </div>
 
@@ -448,7 +443,6 @@
                             tabindex="0"
                             @click="() => $modal.show(`yahoo${id}`)"
                           >
-                            {{ $t('yahoo') }}
                           </div>
 
                           <div
@@ -456,7 +450,6 @@
                             tabindex="0"
                             @click="() => $modal.show(`rakuten${id}`)"
                           >
-                            Rakuten
                           </div>
 
                           <div
@@ -464,7 +457,6 @@
                             tabindex="0"
                             @click="() => $modal.show(`amazon${id}`)"
                           >
-                            Amazon
                           </div>
                         </div>
 

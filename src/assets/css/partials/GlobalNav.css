@@ -10,7 +10,7 @@
 
     & > li {
       box-sizing: border-box;
-      flex-basis: 50%;
+      flex-basis: 20%;
       flex-shrink: 0;
       text-align: center;
     }

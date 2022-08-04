@@ -1,7 +1,6 @@
 .ToolResult {
   position: relative;
   padding-top: rem(56px);
-  padding-bottom: rem(56px);
   margin-top: rem(128px);
   background-color: var(--colorLGray);
 
@@ -203,14 +202,18 @@
   }
 
   & .ToolResult__listItemStore.-yahoo {
-
+    padding-top: rem(6px);
+    padding-bottom: rem(5px);
   }
 
   & .ToolResult__listItemStore.-rakuten {
-
+    padding-top: rem(8px);
+    padding-bottom: rem(8px);
   }
 
   & .ToolResult__listItemStore.-amazon {
+    padding-top: rem(14px);
+    padding-bottom: rem(6px);
   }
 
   & .ToolResult__pet {
@@ -315,7 +318,7 @@
   & .ToolResult__overviewList {
     display: flex;
     flex-wrap: wrap;
-    margin-top: rem(24px);
+    margin-top: rem(15px);
     margin-right: rem(-15px);
     font-size: rem(13px);
 
@@ -335,6 +338,7 @@
     margin-right: rem(5px);
     background-color: #fff;
     border-radius: 5px;
+    cursor: pointer;
   }
 
   & .ToolResult__credit {
