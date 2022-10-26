@@ -5,7 +5,6 @@
       "description": "あなたのご家庭で必要な備蓄品リスト"
     },
     "title01": "<span>あなたのご家庭で必要な</span>備蓄品リスト",
-    "yahoo": "Yahoo!ショッピング",
     "text01": "一緒に住んでいる人の人数や性別、年齢を踏まえて、備えておくべき食料や日用品をリストアップしました。できるところから取り組みましょう！",
     "text02": "結果をシェアする",
     "text03": "印刷する",
@@ -19,13 +18,15 @@
     "text11": "大切なペットの分も、備蓄をしよう",
     "text12": "",
     "text13": "あなたのご家庭で必要な備蓄品リスト",
-    "text14": "↓ 品目名をクリックすると該当の品目欄へジャンプします ↓"
+    "text14": "↓ 品目名をクリックすると該当の品目欄へジャンプします ↓",
+    "text15": "必要な備蓄の目安",
+    "text16": " 3日分",
+    "text17": " 7日分"
   },
   "en": {
     "meta": {
       "description": "The list of suitable emergency stockpiles for your family"
     },
-    "yahoo": "Yahoo! Shopping",
     "title01": "The list of suitable emergency stockpiles for your family.",
     "text01": "This list is estimated based on the genders and ages of your family.",
     "text02": "Share the result",
@@ -40,7 +41,10 @@
     "text11": "Stockpile for your precious pets",
     "text12": "",
     "text13": "The list of suitable emergency stockpiles for your family.",
-    "text14": "↓ Click on the name of the stockpile to see the detail. ↓"
+    "text14": "↓ Click on the name of the stockpile to see the detail. ↓",
+    "text15": "You need stockpiles for about",
+    "text16": " 3 days",
+    "text17": " 7 days"
   }
 }
 </i18n>
@@ -54,6 +58,9 @@
           <p class="PageBlock__text">
             {{ $t('text01') }}
           </p>
+        </div>
+        <div class="PageBlock__text">
+          <p class="PageBlock__title">{{ $t('text15') }} {{ isUpstairs ? $t('text17') : $t('text16') }}</p>
         </div>
       </section>
     </div>
@@ -120,16 +127,13 @@
                 $entryGtm({
                   category: 'SNSシェア',
                   action: 'LINE',
-                  label: 'extra_sns_share_LINE',
+                  label: 'extra_sns_share_LINE'
                 })
               "
             >
               <img
                 src="~/assets/images/tool/result/icon-line.png"
-                srcset="
-                  ~/assets/images/tool/result/icon-line.png    1x,
-                  ~/assets/images/tool/result/icon-line@2x.png 2x
-                "
+                srcset="~/assets/images/tool/result/icon-line.png 1x, ~/assets/images/tool/result/icon-line@2x.png 2x"
                 alt=""
                 width="40"
                 height="40"
@@ -168,16 +172,13 @@
                 $entryGtm({
                   category: 'SNSシェア',
                   action: 'Mail',
-                  label: 'extra_sns_share_Mail',
+                  label: 'extra_sns_share_Mail'
                 })
               "
             >
               <img
                 src="~/assets/images/tool/result/icon-mail.png"
-                srcset="
-                  ~/assets/images/tool/result/icon-mail.png    1x,
-                  ~/assets/images/tool/result/icon-mail@2x.png 2x
-                "
+                srcset="~/assets/images/tool/result/icon-mail.png 1x, ~/assets/images/tool/result/icon-mail@2x.png 2x"
                 alt=""
                 width="37"
                 height="27"
@@ -204,51 +205,58 @@
 
       <div class="Container -m">
         <section class="ToolResult__overview">
-          <h3
-            class="ToolResult__titleSub ToolResult__lead"
-            v-html="$t('text04')"
-          />
-          
-          <h3
-            class="ToolResult__titleSub ToolResult__lead"
-            v-html="$t('text14')"
-          />
+          <h3 class="ToolResult__titleSub ToolResult__lead" v-html="$t('text04')" />
 
-          <ul class="ToolResult__overviewList">
-            <template
-              v-for="({ item, quantity, unit }, index) in stockpileList"
-            >
-              <li
-                :key="`stockpile${index}`"
-                class="ToolResult__overviewListItem"
-                tabindex="0"
-                @click="jumpStockpile(index)"
-              >
-                {{ item[$i18n.locale] }}： {{ quantity }}
-                {{ unit[$i18n.locale] }}
-              </li>
-            </template>
-          </ul>
-        </section>
+          <h3 class="ToolResult__titleSub ToolResult__lead" v-html="$t('text14')" />
 
-        <template v-if="hasPet">
-          <section class="ToolResult__overview">
-            <h3 class="ToolResult__titleSub">{{ $t('text05') }}</h3>
-
+          <section v-for="key in category" :key="key" class="ToolResult__frame">
+            <h3 class="ToolResult__titleSub">{{ key }}</h3>
             <ul class="ToolResult__overviewList">
-              <template v-for="({ item }, index) in petStockpileList">
+              <template v-for="{ id, item, quantity, unit } in categoryStockpileList[key]">
                 <li
-                  :key="`petStockpile${index}`"
+                  :key="`stockpile${id}`"
                   class="ToolResult__overviewListItem"
                   tabindex="0"
-                  @click="jumpPetStockpile(index)"
+                  @click="jumpStockpile(id)"
                 >
-                  {{ item[$i18n.locale] }}
+                  <img
+                    :src="require(`~/assets/images/tool/result/checkbox.png`)"
+                    alt="□"
+                    width="18"
+                    height="18"
+                    class="ToolResult__overviewPrintOnly"
+                  />
+                  {{ item[$i18n.locale] }}： {{ quantity }}
+                  {{ unit[$i18n.locale] }}
                 </li>
               </template>
             </ul>
           </section>
-        </template>
+          <template v-if="hasPet">
+            <section class="ToolResult__frame">
+              <h3 class="ToolResult__titleSub">{{ $t('text05') }}</h3>
+              <ul class="ToolResult__overviewList">
+                <template v-for="({ item }, index) in petStockpileList">
+                  <li
+                    :key="`petStockpile${index}`"
+                    class="ToolResult__overviewListItem"
+                    tabindex="0"
+                    @click="jumpPetStockpile(index)"
+                  >
+                    <img
+                      :src="require(`~/assets/images/tool/result/checkbox.png`)"
+                      alt="□"
+                      width="18"
+                      height="18"
+                      class="ToolResult__overviewPrintOnly"
+                    />
+                    {{ item[$i18n.locale] }}
+                  </li>
+                </template>
+              </ul>
+            </section>
+          </template>
+        </section>
       </div>
 
       <section class="ToolResult__detail">
@@ -259,28 +267,16 @@
           </h3>
 
           <ul class="ToolResult__itemList">
-            <template
-              v-for="(
-                { id, category, item, quantity, unit, url, description }, index
-              ) in stockpileList"
-            >
-              <li :key="`stockpile${index}`" :id="`stockpile${index}`">
+            <template v-for="{ id, category, item, quantity, unit, url, description } in stockpileList">
+              <li :key="`stockpile${id}`" :id="`stockpile${id}`">
                 <div class="ToolResult__listItem" tabindex="0">
                   <div class="ToolResult__listItemInner">
                     <div class="ToolResult__listItemImg">
                       <img
-                        :src="
-                          require(`~/assets/images/tool/result/stockpile/img-${$zeroPad(
-                            id
-                          )}.png`)
-                        "
+                        :src="require(`~/assets/images/tool/result/stockpile/img-${$zeroPad(id)}.png`)"
                         :srcset="`
-                        ${require(`~/assets/images/tool/result/stockpile/img-${$zeroPad(
-                          id
-                        )}.png`)} 1x,
-                        ${require(`~/assets/images/tool/result/stockpile/img-${$zeroPad(
-                          id
-                        )}@2x.png`)} 2x
+                        ${require(`~/assets/images/tool/result/stockpile/img-${$zeroPad(id)}.png`)} 1x,
+                        ${require(`~/assets/images/tool/result/stockpile/img-${$zeroPad(id)}@2x.png`)} 2x
                       `"
                         alt=""
                         width="130"
@@ -290,9 +286,7 @@
 
                     <div class="ToolResult__listItemDesc">
                       <div class="ToolResult__listItemName">
-                        <span>
-                          {{ $t('text08') }}：{{ category[$i18n.locale] }}
-                        </span>
+                        <span> {{ $t('text08') }}：{{ category[$i18n.locale] }} </span>
                         {{ item[$i18n.locale] }}
                       </div>
 
@@ -322,11 +316,19 @@
                             $entryGtm({
                               category: '購入ボタン',
                               action: 'Yahooショッピング',
-                              label: `extra_purchase_yahoo_${item.ja}`,
+                              label: `extra_purchase_yahoo_${item.ja}`
                             })
                           "
                         >
-                          {{ $t('yahoo') }}
+                          <img
+                            src="../../assets/images/tool/result/logo-yahoo.png"
+                            srcset="
+                              ~/assets/images/tool/result/logo-yahoo.png    1x,
+                              ~/assets/images/tool/result/logo-yahoo@2x.png 2x
+                            "
+                            alt="Yahoo!ショッピング"
+                            width="140"
+                          />
                         </div>
 
                         <div
@@ -337,11 +339,19 @@
                             $entryGtm({
                               category: '購入ボタン',
                               action: 'Rakuten',
-                              label: `extra_purchase_rakuten_${item.ja}`,
+                              label: `extra_purchase_rakuten_${item.ja}`
                             })
                           "
                         >
-                          Rakuten
+                          <img
+                            src="../../assets/images/tool/result/logo-rakuten.png"
+                            srcset="
+                              ~/assets/images/tool/result/logo-rakuten.png    1x,
+                              ~/assets/images/tool/result/logo-rakuten@2x.png 2x
+                            "
+                            alt="Rakuten"
+                            width="140"
+                          />
                         </div>
 
                         <div
@@ -352,31 +362,27 @@
                             $entryGtm({
                               category: '購入ボタン',
                               action: 'Amazon',
-                              label: `extra_purchase_amazon_${item.ja}`,
+                              label: `extra_purchase_amazon_${item.ja}`
                             })
                           "
                         >
-                          Amazon
+                          <img
+                            src="../../assets/images/tool/result/logo-amazon.png"
+                            srcset="
+                              ~/assets/images/tool/result/logo-amazon.png    1x,
+                              ~/assets/images/tool/result/logo-amazon@2x.png 2x
+                            "
+                            alt="Amazon"
+                            width="140"
+                          />
                         </div>
                       </div>
 
-                      <tool-result-modal
-                        :id="id"
-                        :url="url.yahoo"
-                        site-name="yahoo"
-                      />
+                      <tool-result-modal :id="id" :url="url.yahoo" site-name="yahoo" />
 
-                      <tool-result-modal
-                        :id="id"
-                        :url="url.rakuten"
-                        site-name="rakuten"
-                      />
+                      <tool-result-modal :id="id" :url="url.rakuten" site-name="rakuten" />
 
-                      <tool-result-modal
-                        :id="id"
-                        :url="url.amazon"
-                        site-name="amazon"
-                      />
+                      <tool-result-modal :id="id" :url="url.amazon" site-name="amazon" />
                     </div>
                   </template>
                 </div>
@@ -391,28 +397,16 @@
               </h3>
 
               <ul class="ToolResult__itemList">
-                <template
-                  v-for="(
-                    { id, category, item, url, description }, index
-                  ) in petStockpileList"
-                >
+                <template v-for="({ id, category, item, url, description }, index) in petStockpileList">
                   <li :key="`petStockpile${index}`" :id="`petStockpile${index}`">
                     <div class="ToolResult__listItem" tabindex="0">
                       <div class="ToolResult__listItemInner">
                         <div class="ToolResult__listItemImg">
                           <img
-                            :src="
-                              require(`~/assets/images/tool/result/stockpile/pet/img-${$zeroPad(
-                                index + 1
-                              )}.png`)
-                            "
+                            :src="require(`~/assets/images/tool/result/stockpile/pet/img-${$zeroPad(index + 1)}.png`)"
                             :srcset="`
-                            ${require(`~/assets/images/tool/result/stockpile/pet/img-${$zeroPad(
-                              index + 1
-                            )}.png`)} 1x,
-                            ${require(`~/assets/images/tool/result/stockpile/pet/img-${$zeroPad(
-                              index + 1
-                            )}@2x.png`)} 2x
+                            ${require(`~/assets/images/tool/result/stockpile/pet/img-${$zeroPad(index + 1)}.png`)} 1x,
+                            ${require(`~/assets/images/tool/result/stockpile/pet/img-${$zeroPad(index + 1)}@2x.png`)} 2x
                           `"
                             alt=""
                             width="130"
@@ -422,9 +416,7 @@
 
                         <div class="ToolResult__listItemDesc">
                           <div class="ToolResult__listItemName">
-                            <span>
-                              {{ $t('text08') }}：{{ category[$i18n.locale] }}
-                            </span>
+                            <span> {{ $t('text08') }}：{{ category[$i18n.locale] }} </span>
                             {{ item[$i18n.locale] }}
                           </div>
 
@@ -448,7 +440,15 @@
                             tabindex="0"
                             @click="() => $modal.show(`yahoo${id}`)"
                           >
-                            {{ $t('yahoo') }}
+                            <img
+                              src="../../assets/images/tool/result/logo-yahoo.png"
+                              srcset="
+                                ~/assets/images/tool/result/logo-yahoo.png    1x,
+                                ~/assets/images/tool/result/logo-yahoo@2x.png 2x
+                              "
+                              alt="Yahoo!ショッピング"
+                              width="140"
+                            />
                           </div>
 
                           <div
@@ -456,7 +456,15 @@
                             tabindex="0"
                             @click="() => $modal.show(`rakuten${id}`)"
                           >
-                            Rakuten
+                            <img
+                              src="../../assets/images/tool/result/logo-rakuten.png"
+                              srcset="
+                                ~/assets/images/tool/result/logo-rakuten.png    1x,
+                                ~/assets/images/tool/result/logo-rakuten@2x.png 2x
+                              "
+                              alt="Rakuten"
+                              width="140"
+                            />
                           </div>
 
                           <div
@@ -464,27 +472,23 @@
                             tabindex="0"
                             @click="() => $modal.show(`amazon${id}`)"
                           >
-                            Amazon
+                            <img
+                              src="../../assets/images/tool/result/logo-amazon.png"
+                              srcset="
+                                ~/assets/images/tool/result/logo-amazon.png    1x,
+                                ~/assets/images/tool/result/logo-amazon@2x.png 2x
+                              "
+                              alt="Amazon"
+                              width="140"
+                            />
                           </div>
                         </div>
 
-                        <tool-result-modal
-                          :id="id"
-                          :url="url.yahoo"
-                          site-name="yahoo"
-                        />
+                        <tool-result-modal :id="id" :url="url.yahoo" site-name="yahoo" />
 
-                        <tool-result-modal
-                          :id="id"
-                          :url="url.rakuten"
-                          site-name="rakuten"
-                        />
+                        <tool-result-modal :id="id" :url="url.rakuten" site-name="rakuten" />
 
-                        <tool-result-modal
-                          :id="id"
-                          :url="url.amazon"
-                          site-name="amazon"
-                        />
+                        <tool-result-modal :id="id" :url="url.amazon" site-name="amazon" />
                       </div>
                     </div>
                   </li>
@@ -518,20 +522,20 @@ import {
   categoryC,
   categoryD1,
   categoryD2,
-  lineShareIds,
+  lineShareIds
 } from '@@/stockpile.config'
 import ToolResultModal from '@partials/tool/ToolResultModal'
 
 export default {
   name: 'PageToolResult',
   components: {
-    ToolResultModal,
+    ToolResultModal
   },
   mixins: [head, methods],
   localStorage: {
     $toolValues: {
-      type: Object,
-    },
+      type: Object
+    }
   },
   beforeRouteEnter(to, from, next) {
     next((vm) => {
@@ -544,25 +548,29 @@ export default {
     return {
       hasPet: false,
       stockpileList: [],
+      categoryStockpileList: {},
+      category: [],
       mailShareText: '',
       lineShareText: '',
       bodyAttrs: {
-        class: 'PageToolResult',
+        class: 'PageToolResult'
       },
       meta: {
         title: this.$getTitle('toolResult', this.$i18n.locale),
-        description: this.$i18n.t('meta.description'),
+        description: this.$i18n.t('meta.description')
       },
+      isUpstairs: false
     }
   },
   computed: {
     petStockpileList() {
       return petStockpileList
-    },
+    }
   },
   mounted() {
     const toolValues = this.$toolValues
     const { isUpstairs, family, hasPet } = toolValues
+    this.isUpstairs = isUpstairs
     const { length: familyLength } = family
     const stockpileRate = isUpstairs ? upStairsRate : downStairsRate
     const isHighRate = (() => stockpileRate === upStairsRate)()
@@ -576,14 +584,10 @@ export default {
     })()
     // 生理用品が必要な女性グループ
     const sanitaryItemsGroup = (() => {
-      return states.some(
-        (state) => state === 'child2Female' || state === 'adultFemale'
-      )
+      return states.some((state) => state === 'child2Female' || state === 'adultFemale')
     })()
     // 基礎化粧品が必要な女性グループ
-    const skinCareGroup = states.filter(
-      (state) => /Female/.test(state) && !/^(infants|child1)/.test(state)
-    )
+    const skinCareGroup = states.filter((state) => /Female/.test(state) && !/^(infants|child1)/.test(state))
     const sumQuantity = (quantity, required) => {
       if (typeof required === 'object') {
         for (const state of states) {
@@ -667,11 +671,19 @@ export default {
 
         return {
           ...stockpile,
-          quantity,
+          quantity
         }
       })
       .filter(({ quantity }) => quantity !== 0)
       .sort((a, b) => (a.id < b.id ? -1 : 1))
+
+    this.category = Array.from(new Set(innerStockpileList.map((prop) => prop.group[this.$i18n.locale])))
+    this.stockpileList = innerStockpileList
+    this.stockpileList.forEach((prop) => {
+      this.categoryStockpileList[prop.group[this.$i18n.locale]] =
+        this.categoryStockpileList[prop.group[this.$i18n.locale]] || []
+      this.categoryStockpileList[prop.group[this.$i18n.locale]].push(prop)
+    })
 
     const createShareText = (callback) => {
       const encodeText = (value) => encodeURIComponent(value)
@@ -681,10 +693,10 @@ export default {
 
       if (this.$i18n.locale === 'ja') {
         message = '東京備蓄ナビで自分にあった備蓄を調べてみよう'
-        url = '***'
+        url = 'https://www.bichiku.metro.tokyo.lg.jp/tool/'
       } else {
         message = 'Find out the adequate stockpiling for you'
-        url = '***'
+        url = 'https://www.bichiku.metro.tokyo.lg.jp/en/tool/'
       }
 
       shareText += encodeText(`
@@ -711,11 +723,35 @@ ${url}`)
         return lineShareIds.includes(id)
       })
 
-      for (const shareId of shareIds) {
-        const { quantity, item, unit } = shareId
+      const categoryShareIds = {}
+      shareIds.forEach((prop) => {
+        categoryShareIds[prop.group[this.$i18n.locale]] = categoryShareIds[prop.group[this.$i18n.locale]] || []
+        categoryShareIds[prop.group[this.$i18n.locale]].push(prop)
+      })
 
+      for (const key of this.category) {
         shareText += `
+
+${key}`
+        for (const stockpile of this.categoryStockpileList[key]) {
+          const { quantity, item, unit } = stockpile
+
+          shareText += `
 ${item[this.$i18n.locale]} ${quantity}${unit[this.$i18n.locale]}`
+        }
+      }
+
+      if (hasPet) {
+        const key = this.$t('text05')
+        shareText += `
+
+${key}`
+        for (const shareId of petStockpileList) {
+          const { item } = shareId
+          console.log(shareId)
+          shareText += `
+${item[this.$i18n.locale]}`
+        }
       }
 
       return shareText
@@ -736,18 +772,35 @@ ${item[this.$i18n.locale]} ${quantity}${unit[this.$i18n.locale]}`
 `
       }
 
-      for (const stockpile of innerStockpileList) {
-        const { quantity, item, unit } = stockpile
-
+      for (const key of this.category) {
         shareText += `
+
+${key}`
+        for (const stockpile of this.categoryStockpileList[key]) {
+          const { quantity, item, unit } = stockpile
+
+          shareText += `
 ${item[this.$i18n.locale]} ${quantity}${unit[this.$i18n.locale]}`
+        }
+      }
+
+      if (hasPet) {
+        const key = this.$t('text05')
+        shareText += `
+
+${key}`
+        for (const shareId of petStockpileList) {
+          const { item } = shareId
+          console.log(shareId)
+          shareText += `
+${item[this.$i18n.locale]}`
+        }
       }
 
       return shareText
     })
 
     this.hasPet = hasPet
-    this.stockpileList = innerStockpileList
     this.mailShareText = mailShareText
     this.lineShareText = lineShareText
   },
@@ -755,16 +808,12 @@ ${item[this.$i18n.locale]} ${quantity}${unit[this.$i18n.locale]}`
     printResult() {
       window.print()
     },
-    jumpStockpile(index){
-      document
-          .querySelector(`#stockpile${index}`)
-          .scrollIntoView({behavior: "smooth"})
+    jumpStockpile(index) {
+      document.querySelector(`#stockpile${index}`).scrollIntoView({ behavior: 'smooth' })
     },
-    jumpPetStockpile(index){
-      document
-          .querySelector(`#petStockpile${index}`)
-          .scrollIntoView({behavior: "smooth"})
-    },
-  },
+    jumpPetStockpile(index) {
+      document.querySelector(`#petStockpile${index}`).scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 }
 </script>
