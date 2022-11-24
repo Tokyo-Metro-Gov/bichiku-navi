@@ -22,6 +22,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/gtm": "^2.4.0",
+    "axios-jsonp": "^1.0.4",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.20.3",
