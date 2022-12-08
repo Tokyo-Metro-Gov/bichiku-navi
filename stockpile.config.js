@@ -1879,8 +1879,8 @@ export const stockpileList = [
       child2Female: 0,
       adultMale: 0,
       adultFemale: 0,
-      agedMale: 30,
-      agedFemale: 30
+      agedMale: 4,
+      agedFemale: 4
     },
     url: {
       yahoo: 'https://bit.ly/3dEwkFZ',
