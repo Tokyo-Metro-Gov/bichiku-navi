@@ -1387,7 +1387,7 @@ export const stockpileList = [
       en: 'Restroom'
     },
     item: {
-      ja: '簡易トイレ',
+      ja: '携帯トイレ・簡易トイレ',
       en: 'Portable toilet'
     },
     unit: {
@@ -1395,7 +1395,7 @@ export const stockpileList = [
       en: 'time use'
     },
     description: {
-      ja: '断水するとトイレは流せません。水が使えたとしても、集合住宅で配管が破損していた場合、汚水が逆流し下階のトイレからあふれる可能性もあります。トイレを我慢するために、食事や水を飲む量を減らすと、健康状態の悪化にもつながるので、家庭の便器に設置して固めて処理できる簡易トイレを用意しましょう。使用済の便袋は区市町村のゴミ収集方法に従って処理しましょう。',
+      ja: '断水するとトイレは流せません。水が使えたとしても、集合住宅で配管が破損していた場合、汚水が逆流し下階のトイレからあふれる可能性もあります。トイレを我慢するために、食事や水を飲む量を減らすと、健康状態の悪化にもつながるので、家庭の便器に設置して固めて処理できる携帯トイレ・簡易トイレを用意しましょう。使用済の便袋は区市町村のゴミ収集方法に従って処理しましょう。',
       en: 'Once water supply is suspended, you cannot flush the toilet. Even if tap water is available, drainage piping may have been damaged, raising the possibility of sewage flowing back and overflowing in the washroom downstairs in the case of collective housing. If you reduce dietary and water intake to hold it, your health condition will worsen. So, keep in stock a portable toilet that can be installed on the lavatory seat for disposal of excrement in solid form. Follow municipal rules of garbage collection for disposal of used bags containing filthy matter.'
     },
     required: {
