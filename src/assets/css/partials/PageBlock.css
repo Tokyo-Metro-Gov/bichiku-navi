@@ -13,6 +13,28 @@
     margin-top: rem(40px);
     line-height: 2;
   }
+
+  & .ToolLead__note {
+    font-size: rem(12px);
+    line-height: 1.6;
+  }
+
+  & .PrivacyPolicy__reset {
+    padding: 0;
+    color: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+  }
+
+  & .PrivacyPolicy__resetMessage {
+    margin: 0 0 0 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1a7f37;
+    vertical-align: middle;
+  }
 }
 
 @media (--md) {
@@ -24,7 +46,7 @@
     & .PageBlock__title {
       font-size: rem(20px);
 
-      & > span {
+      &>span {
         display: block;
       }
     }
@@ -40,11 +62,13 @@
   }
 }
 
-
 @media print {
   .PageBlock {
+    margin-top: -25mm;
+    margin-bottom: -10mm;
+
     & .PageBlock__title {
-      & > span {
+      &>span {
         display: inline;
       }
     }

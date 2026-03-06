@@ -3,7 +3,7 @@
 }
 
 ._hide {
-  display: none
+  display: none;
 }
 
 ._showTopBtn {
@@ -16,17 +16,17 @@
 
 @media (--md) {
   ._hideMobile {
-    display: none
+    display: none;
   }
 
   ._showMobile {
     display: block;
   }
-  
+
   ._hideMobileTopBtn {
     visibility: hidden;
   }
-  
+
   ._showMobileTopBtn {
     visibility: visible;
   }

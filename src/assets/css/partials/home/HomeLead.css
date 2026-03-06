@@ -1,22 +1,119 @@
 .HomeLead {
+  --homeLeadButtonGap: rem(180px);
+  --homeLeadButtonWidth: rem(380px);
+  --homeLeadButtonPadding: rem(46px);
+
+  & .HomeLead__hero {
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  & .HomeLead__hero img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  & .HomeLead__sideButton {
+    position: absolute;
+    top: 50%;
+    left: calc(50% + (var(--homeLeadButtonGap) / 2) + (var(--homeLeadButtonWidth) / 2));
+    transform: translate(-50%, -50%);
+  }
+
+  & .HomeLead__sideButton .Button,
+  & .HomeLead__button .Button {
+    width: var(--homeLeadButtonWidth);
+    --padding: var(--homeLeadButtonPadding);
+  }
+
   & .HomeLead__button {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: rem(64px);
+    gap: var(--homeLeadButtonGap);
   }
-}
 
+  & .HomeLead__buttonItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & .HomeLead__buttonItem--primary {
+    --color: #fff7af;
+  }
+
+  & .HomeLead__buttonItem--noData {
+    --color: #ffe802;
+  }
+
+  & .HomeLead__buttonItem--history {
+    --color: #ffe802;
+  }
+
+  & .HomeLead__buttonItem--whyNoHistory {
+    --color: #fff7af;
+  }
+
+  & .HomeLead__buttonLink {
+    display: block;
+    line-height: 1.4;
+  }
+
+}
 
 @media (--md) {
   .HomeLead {
+    & .HomeLead__hero {
+      text-align: center;
+    }
+
+    & .HomeLead__sideButton {
+      position: static;
+      margin-top: rem(16px);
+      transform: none;
+    }
+
     & .HomeLead__button {
       display: block;
+      width: 100%;
+      max-width: 100%;
       margin-top: rem(24px);
       text-align: center;
     }
 
-    & .HomeLead__button .Button + .Button {
+    & .HomeLead__button--noHistory {
+      display: block;
+    }
+
+    & .HomeLead__button .Button {
+      width: 90%;
+      max-width: 100%;
+      box-sizing: border-box;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    & .HomeLead__button--noHistory .Button {
+      width: 90%;
+      min-width: 0;
+      max-width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    & .HomeLead__button .Button__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: rem(72px);
+    }
+
+    & .HomeLead__button .Button+.Button {
       margin-top: rem(24px);
     }
+
   }
 }

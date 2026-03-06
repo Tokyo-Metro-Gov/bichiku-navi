@@ -21,7 +21,7 @@
   appearance: none;
 
   &:hover {
-    background-color: rgb(248, 244, 223);;
+    background-color: rgb(248, 244, 223);
   }
 
   & .Button__link {
@@ -34,19 +34,17 @@
   }
 }
 
+.Button.-sm {
+  --width: rem(180px);
+  --fontSize: rem(16px);
+  --padding: rem(8px);
+}
+
 .Button.-l {
   --width: rem(380px);
   --round: rem(64px);
   --fontSize: rem(20px);
   --padding: rem(32px);
-}
-
-@media (--md) {
-  .Button.-l {
-    --width: 90%;
-    --fontSize: rem(18px);
-    --padding: rem(16px);
-  }
 }
 
 .Button.-xl {
@@ -57,6 +55,18 @@
 }
 
 @media (--md) {
+  .Button.-sm {
+    --width: rem(140px);
+    --fontSize: rem(16px);
+    --padding: rem(4px);
+  }
+
+  .Button.-l {
+    --width: 90%;
+    --fontSize: rem(18px);
+    --padding: rem(16px);
+  }
+
   .Button.-xl {
     --width: 90%;
     --fontSize: rem(18px);
@@ -71,7 +81,6 @@
   }
 }
 
-
 .Button.-yellowPale {
   --color: var(--colorLYellow);
 
@@ -82,6 +91,17 @@
 
 .Button.-aqua {
   --color: var(--colorAqua);
+
+  color: #fff;
+
+  &:hover {
+    background-color: #238ec7;
+  }
+}
+
+.Button.-search {
+  --color: var(--colorAqua);
+  --width: rem(120px);
 
   color: #fff;
 

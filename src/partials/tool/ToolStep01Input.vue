@@ -11,7 +11,7 @@
       "infants": "乳幼児<span>0~2歳</span>",
       "child1": "子供<span>3歳~小6</span>",
       "child2": "子供<span>中学生以上</span>",
-      "adult": "成人<span>20歳以上</span>",
+      "adult": "成人<span>18歳以上</span>",
       "elder": "高齢者<span>65歳以上</span>"
     },
     "text01": "決定"
@@ -27,7 +27,7 @@
       "infants": "Babies/infants<span>(age 0-2)</span>",
       "child1": "Children<span>(age 3 to 6th grade schooler)</span>",
       "child2": "Children<span>(junior high school age or older)</span>",
-      "adult": "Adults<span>(20 or older)</span>",
+      "adult": "Adults<span>(18 or older)</span>",
       "elder": "Elderly<span>(65 or older)</span>"
     },
     "text01": "Enter"
@@ -50,13 +50,11 @@
               $entryGtm({
                 category: '自分に合った備蓄を調べてみよう',
                 action: '性別',
-                label: 'extra_gender_male',
+                label: 'extra_gender_male'
               })
             "
           />
-          <label :for="`man${index}`" tabindex="0">{{
-            $t('gender.male')
-          }}</label>
+          <label :for="`man${index}`" tabindex="0">{{ $t('gender.male') }}</label>
         </div>
 
         <div>
@@ -70,13 +68,11 @@
               $entryGtm({
                 category: '自分に合った備蓄を調べてみよう',
                 action: '性別',
-                label: 'extra_gender_female',
+                label: 'extra_gender_female'
               })
             "
           />
-          <label :for="`woman${index}`" tabindex="0">{{
-            $t('gender.female')
-          }}</label>
+          <label :for="`woman${index}`" tabindex="0">{{ $t('gender.female') }}</label>
         </div>
       </div>
     </div>
@@ -96,15 +92,11 @@
               $entryGtm({
                 category: '自分に合った備蓄を調べてみよう',
                 action: '世代',
-                label: 'extra_age_infants',
+                label: 'extra_age_infants'
               })
             "
           />
-          <label
-            :for="`infants${index}`"
-            tabindex="0"
-            v-html="$t('age.infants')"
-          />
+          <label :for="`infants${index}`" tabindex="0" v-html="$t('age.infants')" />
         </div>
 
         <div>
@@ -118,15 +110,11 @@
               $entryGtm({
                 category: '自分に合った備蓄を調べてみよう',
                 action: '世代',
-                label: 'extra_age_child1',
+                label: 'extra_age_child1'
               })
             "
           />
-          <label
-            :for="`child1-${index}`"
-            tabindex="0"
-            v-html="$t('age.child1')"
-          />
+          <label :for="`child1-${index}`" tabindex="0" v-html="$t('age.child1')" />
         </div>
 
         <div>
@@ -140,15 +128,11 @@
               $entryGtm({
                 category: '自分に合った備蓄を調べてみよう',
                 action: '世代',
-                label: 'extra_age_child2',
+                label: 'extra_age_child2'
               })
             "
           />
-          <label
-            :for="`child2-${index}`"
-            tabindex="0"
-            v-html="$t('age.child2')"
-          />
+          <label :for="`child2-${index}`" tabindex="0" v-html="$t('age.child2')" />
         </div>
 
         <div>
@@ -162,7 +146,7 @@
               $entryGtm({
                 category: '自分に合った備蓄を調べてみよう',
                 action: '世代',
-                label: 'extra_age_adult',
+                label: 'extra_age_adult'
               })
             "
           />
@@ -180,7 +164,7 @@
               $entryGtm({
                 category: '自分に合った備蓄を調べてみよう',
                 action: '世代',
-                label: 'extra_age_aged',
+                label: 'extra_age_aged'
               })
             "
           />
@@ -200,7 +184,7 @@
               generation,
               /* prettier-ignore */
               /* adultMaleのようになる ツールの結果に使う */
-              state: `${generation}${sex.charAt(0).toUpperCase()}${sex.slice(1)}`,
+              state: `${generation}${sex.charAt(0).toUpperCase()}${sex.slice(1)}`
             })
           "
         >
@@ -220,14 +204,14 @@ export default {
   props: {
     index: {
       type: Number,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
       sex: '',
       generation: '',
-      isDecided: true,
+      isDecided: true
     }
   },
   methods: {
@@ -241,7 +225,7 @@ export default {
           this.isDecided = false
         }
       }, 100)
-    },
-  },
+    }
+  }
 }
 </script>

@@ -17,6 +17,9 @@
   <div>
     <home-lead />
     <home-tool />
+    <div class="HomeTips">
+      <tips />
+    </div>
   </div>
 </template>
 
@@ -24,23 +27,25 @@
 import head from '@mixins/head'
 import HomeLead from '@partials/home/HomeLead'
 import HomeTool from '@partials/home/HomeTool'
+import Tips from '@partials/tips/Tips'
 
 export default {
   name: 'PageHome',
   components: {
     HomeLead,
     HomeTool,
+    Tips
   },
   mixins: [head],
   data() {
     return {
       bodyAttrs: {
-        class: 'PageHome',
+        class: 'PageHome'
       },
       meta: {
-        description: this.$i18n.t('meta.description'),
-      },
+        description: this.$i18n.t('meta.description')
+      }
     }
-  },
+  }
 }
 </script>

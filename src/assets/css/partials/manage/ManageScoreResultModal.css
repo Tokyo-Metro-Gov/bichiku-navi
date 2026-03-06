@@ -1,0 +1,361 @@
+.ManageModal {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2000;
+}
+
+.ManageModal__backdrop {
+    background: rgba(0, 0, 0, 0.45);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.ManageModal__content {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    max-width: 560px;
+    position: relative;
+    width: calc(100% - 32px);
+    z-index: 1;
+}
+
+.ManageModal__header {
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 20px;
+}
+
+.ManageModal__title {
+    font-size: 18px;
+    margin: 0;
+}
+
+.ManageModal__close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.ManageModal__body {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 16px 20px 22px;
+}
+
+.ManageShare {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ManageShare__image {
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    color: #555;
+    display: flex;
+    font-size: 12px;
+    font-weight: 700;
+    height: 220px;
+    justify-content: center;
+    width: 100%;
+}
+
+.ManageShare__imagePreview {
+    border-radius: 10px;
+    display: block;
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
+.ManageShare__imageLoading {
+    font-size: 12px;
+}
+
+.ManageShare__score {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.ManageShare__icons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.ManageShare__icon {
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.ManageShare__copy {
+    background: #ffe17a;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 16px;
+}
+
+.ManageShare__help {
+    color: #666;
+    font-size: 11px;
+    margin: 0;
+}
+
+.ManageShare__copied {
+    color: #1a7f37;
+    font-size: 11px;
+    font-weight: 700;
+    margin: -4px 0 0;
+}
+
+.ManageShare__text {
+    border: 1px solid #c8c8c8;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.6;
+    padding: 12px;
+    position: relative;
+    width: 100%;
+}
+
+.ManageShare__textCopy {
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 6px;
+    justify-content: center;
+    margin-left: 8px;
+    margin-top: -6px;
+    min-height: 32px;
+    padding: 0 6px;
+}
+
+.ManageShare__textCopyRow {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.ManageShare__textCopyLabel {
+    color: #666;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.ManageShare__textCopyLabel.-copied {
+    color: #1a7f37;
+}
+
+.ManageShare__textCopy svg {
+    fill: none;
+    height: 24px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+    width: 24px;
+}
+
+
+
+.ManageCompare {
+    background: #fff6a8;
+    border-radius: 14px;
+    margin-top: 20px;
+    padding: 16px;
+    text-align: center;
+}
+
+.ManageCompare__title {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+
+.ManageCompare__tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.ManageCompare__tab {
+    background: #fff;
+    border: 1px solid #c8c8c8;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+}
+
+.ManageCompare__tab.-active {
+    background: #FFFFFF;
+    border-color: #c8c8c8;
+}
+
+
+.ManageCompare__list {
+    background: #fff;
+    border: 1px solid #c8c8c8;
+    border-radius: 10px;
+    font-size: 11px;
+    line-height: 1.6;
+    padding: 10px 12px;
+    text-align: left;
+    width: 40%;
+}
+
+.ManageCompare__listItem {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    justify-items: center;
+}
+
+.ManageCompare__listLabel {
+    text-align: right;
+    white-space: nowrap;
+    justify-self: end;
+}
+
+.ManageCompare__listColon {
+    text-align: center;
+    justify-self: center;
+}
+
+.ManageCompare__listValue {
+    text-align: center;
+    white-space: nowrap;
+    justify-self: center;
+}
+
+.ManageCompare__average {
+    align-items: center;
+    background: #fff6a8;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 2px;
+    padding-top: 2px;
+    width: 60%;
+}
+
+.ManageCompare__speech {
+    background: #fff;
+    border: 1px solid #c8c8c8;
+    border-radius: 999px;
+    font-size: 11px;
+    padding: 6px 35px;
+    position: relative;
+    top: 2px;
+    left: -5px;
+    border-radius: 50%;
+}
+
+.ManageCompare__speechText {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+
+.ManageCompare__speechScore {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.ManageCompare__mascotImage {
+    display: block;
+    height: auto;
+    width: 80px;
+}
+
+.ManageModal__action {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.ManageModal__closeButton {
+    background: #ffe600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 22px;
+}
+
+.ToolResult__recommendTipsImage {
+    display: block;
+    margin: 8px auto 0;
+    width: 60px;
+    height: auto;
+}
+
+.ToolResult__recommendTipsTitle {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.ToolResult__recommendTipsMore {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.ToolResult__recommendTipsMore .Button.-sm {
+    --width: rem(120px);
+    --fontSize: rem(10px);
+    --padding: rem(6px);
+}
+
+@media (max-width: 768px) {
+    .ManageCompare__body {
+        flex-direction: column;
+    }
+
+    .ManageCompare__list,
+    .ManageCompare__average {
+        width: 100%;
+    }
+}
+
+.ManageCompare__body {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+}

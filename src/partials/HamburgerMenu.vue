@@ -12,11 +12,7 @@
 </i18n>
 
 <template>
-  <div
-    class="HambergarMenu"
-    :class="{ '-open': activated }"
-    @click="() => $emit('open-nav')"
-  >
+  <div class="HambergarMenu" :class="{ '-open': activated }" @click="() => $emit('open-nav')">
     <div class="HambergarMenu__inner">
       <button class="HambergarMenu__button" aria-controls="sPGlobalNav">
         <span></span>
@@ -38,8 +34,8 @@ export default {
   props: {
     activated: {
       type: Boolean,
-      required: true,
-    },
-  },
+      required: true
+    }
+  }
 }
 </script>

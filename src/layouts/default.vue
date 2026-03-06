@@ -3,15 +3,9 @@
     <global-header />
 
     <sp-global-header>
-      <hamburger-menu
-        :activated="activated"
-        @open-nav="() => (activated = !activated)"
-      />
+      <hamburger-menu :activated="activated" @open-nav="() => (activated = !activated)" />
     </sp-global-header>
-    <sp-global-nav
-      :activated="activated"
-      @close-nav="() => (activated = false)"
-    />
+    <sp-global-nav :activated="activated" @close-nav="() => (activated = false)" />
 
     <nuxt />
 
@@ -33,26 +27,26 @@ export default {
     GlobalFooter,
     SpGlobalHeader,
     SpGlobalNav,
-    HamburgerMenu,
+    HamburgerMenu
   },
   data() {
     return {
-      activated: false,
+      activated: false
     }
   },
   head() {
     return {
       htmlAttrs: {
-        lang: this.$nuxtI18nSeo().htmlAttrs.lang,
+        lang: this.$nuxtI18nSeo().htmlAttrs.lang
       },
       link: this.$nuxtI18nSeo().link,
-      meta: this.$nuxtI18nSeo().meta,
+      meta: this.$nuxtI18nSeo().meta
     }
   },
   watch: {
     $route(to, from) {
       this.activated = false
-    },
+    }
   },
   mounted() {
     const { isKey, get } = this.$cookies
@@ -69,6 +63,6 @@ export default {
 
       html.dataset.theme = theme
     }
-  },
+  }
 }
 </script>

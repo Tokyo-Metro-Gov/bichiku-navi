@@ -3,16 +3,14 @@
   "ja": {
     "text01": "<span>お住まいの種類について</span>お答えください",
     "text02": "戸建て",
-    "text03": "マンションなど<br />集合住宅 ※",
-    "text04": "※エレベーターが止まった時に荷物を持っての階段の上り下りが難しいお住まい",
+    "text03": "マンションなど<br />集合住宅 ",
     "text05": "前の質問へ戻る",
     "text06": "つぎへ"
   },
   "en": {
     "text01": "Please answer about your type of residence.",
     "text02": "Detached house",
-    "text03": "Apartment building or Housing complex※",
-    "text04": "※In the event of a disaster, the elevator may stop.",
+    "text03": "Apartment building or Housing complex",
     "text05": "Go back to the previous question",
     "text06": "Next"
   }
@@ -30,29 +28,16 @@
     <div class="ToolStep02__input">
       <div class="ToolStep02__inputInner">
         <div>
-          <input
-            id="upstairs2"
-            v-model="isUpstairs"
-            type="radio"
-            :value="false"
-          />
+          <input id="upstairs2" v-model="isUpstairs" type="radio" :value="false" />
           <label for="upstairs2" tabindex="0" v-html="$t('text02')" />
         </div>
 
         <div>
-          <input
-            id="upstairs1"
-            v-model="isUpstairs"
-            type="radio"
-            :value="true"
-          />
+          <input id="upstairs1" v-model="isUpstairs" type="radio" :value="true" />
           <label for="upstairs1" tabindex="0" v-html="$t('text03')" />
         </div>
       </div>
 
-      <div class="ToolStep02__inputText">
-        {{ $t('text04') }}
-      </div>
     </div>
 
     <div class="ToolInput__button">
@@ -69,9 +54,7 @@
           $entryGtm({
             category: '自分に合った備蓄を調べてみよう',
             action: '戸建て/マンション',
-            label: isUpstairs
-              ? 'extra_house_apartment'
-              : 'extra_house_detached',
+            label: isUpstairs ? 'extra_house_apartment' : 'extra_house_detached'
           })
         "
       >
@@ -90,36 +73,54 @@ export default {
   props: {
     currentStep: {
       type: Number,
-      required: true,
+      required: true
     },
     totalSteps: {
       type: Number,
-      required: true,
+      required: true
     },
     goToNextStep: {
       type: Function,
-      required: true,
+      required: true
     },
     backToPrevStep: {
       type: Function,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
-      isUpstairs: true,
+      isUpstairs: true
     }
   },
   methods: {
-    setIsUpstairs() {
-      const values = this.$localStorage.get('$toolValues')
+    getHouseholdKey(values) {
+      const family = Array.isArray(values.family) ? values.family : []
+      const isSingle = family.length <= 1
+      const hasChild = family.some(({ generation }) => ['infants', 'child1', 'child2'].includes(generation))
+      const housing = this.isUpstairs ? 'apartment' : 'detached'
 
-      this.$localStorage.set('$toolValues', {
+      if (isSingle && hasChild) {
+        return null
+      }
+
+      if (isSingle) {
+        return `single_${housing}_nochild`
+      }
+
+      return `multi_${housing}_${hasChild ? 'child' : 'nochild'}`
+    },
+    setIsUpstairs() {
+      const values = this.getLatestToolValues()
+      const householdKey = this.getHouseholdKey(values)
+
+      this.setToolValues({
         ...values,
         isUpstairs: this.isUpstairs,
+        householdKey
       })
-    },
-  },
+    }
+  }
 }
 </script>
 

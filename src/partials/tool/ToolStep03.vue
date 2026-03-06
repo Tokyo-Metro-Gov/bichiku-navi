@@ -54,7 +54,7 @@
           $entryGtm({
             category: '自分に合った備蓄を調べてみよう',
             action: '犬/猫を飼っている',
-            label: hasPet ? 'extra_pet_yes' : 'extra_pet_no',
+            label: hasPet ? 'extra_pet_yes' : 'extra_pet_no'
           })
         "
       >
@@ -73,34 +73,36 @@ export default {
   props: {
     currentStep: {
       type: Number,
-      required: true,
+      required: true
     },
     totalSteps: {
       type: Number,
-      required: true,
+      required: true
     },
     backToPrevStep: {
       type: Function,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
-      hasPet: false,
+      hasPet: false
     }
   },
   methods: {
     setHasPet() {
-      const values = this.$localStorage.get('$toolValues')
+      const values = this.getLatestToolValues()
 
-      this.$localStorage.set('$toolValues', {
+      const nextValues = {
         ...values,
-        hasPet: this.hasPet,
-      })
+        hasPet: this.hasPet
+      }
+
+      this.setToolValues(nextValues)
     },
     showResult() {
       this.$router.push(`${this.localePath(this.$getPath('toolResult'))}`)
-    },
-  },
+    }
+  }
 }
 </script>

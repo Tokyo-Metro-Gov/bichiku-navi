@@ -6,15 +6,12 @@
 @import './foundation/html5reset.css';
 @import './foundation/base.css';
 
-
-
 /* *****************************************************************
   components
 ***************************************************************** */
 @import './components/Container.css';
 @import './components/Button.css';
 @import './components/BaloonTitle.css';
-
 
 /* *****************************************************************
   partials
@@ -34,21 +31,10 @@
 @import './partials/home/HomeTool.css';
 @import './partials/home/HomeTips.css';
 
-/* tips */
-@import './partials/tips/TipsList.css';
-@import './partials/tips/TipsIndexButton.css';
-@import './partials/tips/TipsSingle.css';
-@import './partials/tips/TipsSingleOthers.css';
-@import './partials/tips/TipsSingleFloatButton.css';
-@import './partials/tips/TipsSingleShareButtons.css';
-
 /* link */
 @import './partials/link/LinkBlock.css';
 
 /* map */
-@import './partials/map/MapIndexCities.css';
-@import './partials/map/MapDetailDocuments.css';
-@import './partials/map/MapDetailEmbeded.css';
 
 /* tool */
 @import './partials/tool/ToolInput.css';
@@ -56,8 +42,7 @@
 @import './partials/tool/ToolStep02.css';
 @import './partials/tool/ToolStep03.css';
 @import './partials/tool/ToolResult.css';
-
-
+@import './partials/tool/SendMail.css';
 
 /* *****************************************************************
   pages 
@@ -71,17 +56,13 @@
 @import './pages/SiteMap.css';
 @import './pages/English.css';
 
-
-
 /* ***************************************************************
   theme
 *************************************************************** */
-@import './theme/theme-blue.css';
-@import './theme/theme-yellow.css';
+@import './theme/theme-gray.css';
+@import './theme/theme-green.css';
 @import './theme/theme-black.css';
 @import './theme/font-size.css';
-
-
 
 /* ***************************************************************
   utils

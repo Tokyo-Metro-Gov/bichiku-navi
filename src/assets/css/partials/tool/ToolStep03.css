@@ -4,6 +4,7 @@
       display: block;
       padding-top: rem(24px);
       padding-bottom: rem(24px);
+      color: #000;
       border-radius: 10px;
 
       &:focus {

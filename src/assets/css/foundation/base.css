@@ -21,6 +21,10 @@ body {
   word-break: normal;
 }
 
+button {
+  color: inherit;
+}
+
 table {
   box-sizing: border-box;
   width: 100%;
@@ -83,7 +87,6 @@ textarea {
 textarea {
   width: 100%;
 }
-
 
 .app-fade-enter,
 .app-fade-leave-to {

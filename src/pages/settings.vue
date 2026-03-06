@@ -12,8 +12,8 @@
     "text03": "中",
     "text04": "大",
     "text05": "特大",
-    "text06": "青",
-    "text07": "黃",
+    "text06": "灰",
+    "text07": "緑",
     "text08": "黒"
   },
   "en": {
@@ -28,15 +28,15 @@
     "text03": "Medium",
     "text04": "Large",
     "text05": "Extra-large",
-    "text06": "Blue",
-    "text07": "Yellow",
+    "text06": "Gray",
+    "text07": "Green",
     "text08": "Black"
   }
 }
 </i18n>
 
 <template>
-  <div>
+  <div class="PageSettings">
     <div class="PageBlock">
       <section class="Container -s">
         <h1 class="PageBlock__title">{{ $t('title01') }}</h1>
@@ -70,10 +70,10 @@
           <button type="button" @click="setTheme('')">
             {{ $t('text02') }}
           </button>
-          <button type="button" @click="setTheme('blue')">
+          <button type="button" @click="setTheme('gray')">
             {{ $t('text06') }}
           </button>
-          <button type="button" @click="setTheme('yellow')">
+          <button type="button" @click="setTheme('green')">
             {{ $t('text07') }}
           </button>
           <button type="button" @click="setTheme('black')">
@@ -94,12 +94,12 @@ export default {
   data() {
     return {
       bodyAttrs: {
-        class: 'PageSettings',
+        class: 'PageSettings'
       },
       meta: {
         title: this.$getTitle('settings', this.$i18n.locale),
-        description: this.$i18n.t('meta.description'),
-      },
+        description: this.$i18n.t('meta.description')
+      }
     }
   },
   methods: {
@@ -110,7 +110,17 @@ export default {
     setTheme(theme) {
       this.$cookies.set('theme', theme)
       document.querySelector('html').dataset.theme = theme
-    },
-  },
+    }
+  }
 }
 </script>
+
+<style scoped>
+.PageSettings button {
+  color: #000;
+}
+</style>
+
+
+
+

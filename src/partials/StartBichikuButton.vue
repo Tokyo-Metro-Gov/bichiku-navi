@@ -11,17 +11,13 @@
 <template>
   <div class="StartBichikuButton">
     <div class="Button -yellow -xl">
-      <nuxt-link
-        class="Button__link"
-        :to="localePath($getPath('tool'))"
-        v-html="$t('text01')"
-      />
+      <nuxt-link class="Button__link" :to="localePath($getPath('tool'))" v-html="$t('text01')" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'StartBichikuButton',
+  name: 'StartBichikuButton'
 }
 </script>

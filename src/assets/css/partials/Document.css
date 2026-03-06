@@ -29,26 +29,33 @@
       font-size: rem(16px);
     }
 
-    & h2 + p,
-    & h3 + p {
-      margin-top: rem(12px)
+    & h4 {
+      margin-top: rem(20px);
+      font-size: rem(14px);
+      font-weight: bold;
+    }
+
+    & h2+p,
+    & h3+p {
+      margin-top: rem(12px);
     }
 
     & p {
       margin-top: rem(24px);
     }
 
-    & ul, & ol {
+    & ul,
+    & ol {
       margin-top: rem(24px);
       list-style: inside;
 
-      & > li {
+      &>li {
         padding-left: 1em;
         margin-top: rem(8px);
         text-indent: -1em;
 
         & a {
-          margin-left: -.5em;
+          margin-left: -0.5em;
         }
       }
     }
@@ -68,8 +75,8 @@
       & dd {
         padding-left: rem(16px);
 
-        & + dt,
-        & + dd {
+        &+dt,
+        &+dd {
           padding-top: rem(16px);
         }
       }
@@ -93,7 +100,7 @@
       text-align: center;
       background-color: var(--colorLGray);
 
-      & > span {
+      &>span {
         display: block;
         font-weight: bold;
       }
@@ -102,6 +109,35 @@
         justify-content: center;
         margin-top: rem(8px);
       }
+    }
+
+    & table {
+      margin-top: rem(24px);
+      border-collapse: collapse;
+      border: 1px solid var(--colorGray);
+
+      & th,
+      & td {
+        padding: rem(12px) rem(16px);
+        text-align: left;
+        border: 1px solid var(--colorGray);
+      }
+
+      & thead {
+        & th {
+          font-weight: bold;
+          color: #fff;
+          background-color: var(--colorNavy);
+        }
+      }
+
+      & tbody {
+        & tr:nth-child(even) {
+          color: #000;
+          background-color: var(--colorLGray);
+        }
+      }
+
     }
   }
 }

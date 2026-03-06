@@ -1,0 +1,73 @@
+html[data-theme='gray'] {
+  --color: #E0E0E0;
+
+  color: #000;
+  background-color: var(--color);
+
+  & .ToolResult,
+  & .TipsSingleOthers,
+  & .PageMapDetail,
+  & .PageTool,
+  & .HomeTool {
+    background-color: var(--color);
+  }
+
+  & .MapDetailDocuments,
+  & .MapIndexCities,
+  & .BaloonTitle,
+  & .Button__link,
+  & .ToolInput,
+  & .ToolResult__itemList,
+  & .ToolResult__shareList>li:last-child,
+  & .TipsSingle__lead,
+  & .TipsSingle__titleWrap,
+  & .ToolResult__titleSub,
+  & .ToolResult__message {
+    color: #000;
+  }
+
+  & .TipsSingle a,
+  & .TipsSingle blockquote {
+    color: #000;
+  }
+
+  & .HomeTool__input .Button__link {
+    color: #fff;
+  }
+
+  & .ToolResult__title {
+
+    &::before,
+    &::after {
+      border-color: #000;
+    }
+  }
+
+  & .PageManage {
+    color: #222;
+
+    & .ManageItem {
+      color: #222;
+    }
+
+    & .ManageItem__prevUp,
+    & .ManageItem__warningExpired,
+    & .ManageItem__stockExpired {
+      color: #D43331;
+    }
+
+    & .ManageItem__prevDown {
+      color: #fff;
+    }
+
+    & .ManageItem__warningNear,
+    & .ManageItem__stockNear {
+      color: #b35a00;
+    }
+  }
+
+  & .GlobalFooter__pageTop {
+    --startColor: var(--color);
+    --stopColor: var(--color);
+  }
+}

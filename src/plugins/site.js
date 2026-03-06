@@ -30,9 +30,9 @@ const siteData = {
         }
 
         return process.env.PAGE_PATHS[name]
-      },
+      }
     })
-  },
+  }
 }
 
 Vue.use(siteData)

@@ -1,5 +1,5 @@
 .PageToolResult {
   & .GlobalFooter__pageTop {
-    --startColor: var(--colorLGray);
+    --startColor: var(-yellowPale);
   }
 }

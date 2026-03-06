@@ -2,29 +2,23 @@
   "name": "tokyo-bichiku-navi",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
+    "make:tips-config": "node ./make.tips.config.js",
+    "dev": "npm run make:tips-config && nuxt --hostname 0.0.0.0 --port 3000",
+    "build": "npm run make:tips-config && node scripts/generate-score-ogp.js && nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "npm run make:tips-config && node scripts/generate-score-ogp.js && nuxt generate",
+    "generate:ogp": "node scripts/generate-score-ogp.js",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{.css}\" --ignore-path .gitignore",
-    "lint": "npm run lint:js && npm run lint:style"
-  },
-  "lint-staged": {
-    "*.{js,vue}": "eslint",
-    "*.{css}": "stylelint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "lint": "npm run lint:js && npm run lint:style",
+    "lintfix": "prettier --write --list-different . && yarn lint:js --fix && yarn lint:style --fix"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/gtm": "^2.4.0",
     "axios-jsonp": "^1.0.4",
     "core-js": "^3.8.3",
-    "nuxt": "^3.0.0",
+    "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.20.3",
     "vue-cookies": "^1.7.4",
     "vue-js-modal": "^2.0.0-rc.6",

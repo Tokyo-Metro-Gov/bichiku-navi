@@ -3,13 +3,13 @@ module.exports = {
   extends: [
     'stylelint-config-standard',
     'stylelint-config-recess-order',
-    'stylelint-config-prettier',
+    'stylelint-config-prettier'
   ],
   ignoreFiles: [
     './build/css/style.css',
     './src/assets/css/foundation/_html5reset.css',
     './src/assets/css/foundation/_break-point.css',
-    './src/assets/css/foundation/_variables.css',
+    './src/assets/css/foundation/_variables.css'
   ],
   rules: {
     'no-empty-source': null,
@@ -28,16 +28,16 @@ module.exports = {
       'always',
       {
         except: ['first-nested'],
-        ignore: ['after-comment'],
-      },
+        ignore: ['after-comment']
+      }
     ],
     // https://stylelint.io/user-guide/rules/at-rule-empty-line-before#first-nested
     'at-rule-empty-line-before': [
       'always',
       {
         except: ['first-nested'],
-        ignoreAtRules: ['import', 'mixin', 'include', 'define-mixin'],
-      },
-    ],
-  },
+        ignoreAtRules: ['import', 'mixin', 'include', 'define-mixin']
+      }
+    ]
+  }
 }
