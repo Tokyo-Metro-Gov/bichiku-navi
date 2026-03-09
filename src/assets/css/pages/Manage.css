@@ -1,0 +1,854 @@
+﻿.ManageHero {
+    margin: 24px 0 32px;
+}
+
+.ManagePage .Container {
+    --width: rem(1040px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ManageHero__bar {
+    background: #ffe600;
+    border-radius: 6px;
+    padding: 18px 24px;
+    max-width: var(--width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ManageHero__title {
+    color: #111;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.ManageHero__body {
+    padding: 18px 24px 0;
+}
+
+.ManageHero__text {
+    color: #222;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.ManageSection {
+    margin-bottom: 28px;
+}
+
+.ManageSection__title {
+    background: #dfe0e6;
+    border-radius: 6px 6px 0 0;
+    border: 1px solid #b9bcc5;
+    color: #222;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    gap: 12px;
+}
+
+.ManageSection__title.is-collapsed {
+    border-radius: 6px;
+}
+
+.ManageSection__titleText {
+    flex: 1 1 auto;
+}
+
+.ManageSection__header {
+    background: #f5f6f8;
+    border: 1px solid #b9bcc5;
+    border-top: none;
+    color: #555;
+    display: grid;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    column-gap: 0;
+    row-gap: 8px;
+    grid-template-columns: 32px 1.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+    margin-bottom: 0;
+    padding: 8px 22px;
+    padding: 8px 22px;
+}
+
+
+.ManageSection__headerShift {
+    margin-left: 0;
+    text-align: center;
+}
+
+.ManageSection__header>span:last-child {
+    text-align: center;
+}
+
+.ManageSection__toggle {
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    height: 24px;
+    justify-content: center;
+    padding: 0;
+    width: 24px;
+}
+
+.ManageSection__toggle svg {
+    fill: none;
+    height: 18px;
+    stroke: #111;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    transition: transform 0.2s ease;
+    width: 18px;
+}
+
+.ManageSection__toggle svg.is-collapsed {
+    transform: rotate(-90deg);
+}
+
+.ManageList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ManageItem {
+    background: #fffdf0;
+    border: 1px solid #f1e7a3;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.ManageItem__header {
+    align-items: center;
+    background: #fff9d7;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 32px 1.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+    column-gap: 0;
+    row-gap: 8px;
+    min-height: 40px;
+    padding: 10px 22px;
+}
+
+.ManageItem__name {
+    font-size: 14px;
+    font-weight: 700;
+    min-width: 0;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.ManageItem__nameWrap {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    min-width: 0;
+}
+
+.ManageItem__achievement {
+    align-items: center;
+    display: inline-flex;
+    gap: 6px;
+    margin-left: 8px;
+    opacity: 0;
+    transform: translateY(4px);
+    animation: manageAchievementFadeIn 0.35s ease-out forwards;
+}
+
+.ManageItem__achievementImg {
+    height: 34px;
+    padding: 4px;
+    width: auto;
+}
+
+.ManageItem__achievementText {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #000000;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    line-height: 1;
+    width: 45px;
+    height: 26px;
+    padding: 0;
+    background-color: #fff;
+}
+
+@keyframes manageAchievementFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ManageItem__summaryValue {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.ManageItem__summaryCurrent {
+    font-weight: 700;
+}
+
+.ManageItem__summaryRecommended {
+    font-weight: 400;
+}
+
+.ManageItem__summary {
+    text-align: center;
+}
+
+.ManageItem__summarySlash {
+    color: #999;
+    margin: 0 4px;
+}
+
+.ManageItem__progress {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.ManageItem__progress--shifted {
+    transform: translateX(16px);
+}
+
+.ManageItem__progress--empty {
+    min-height: 14px;
+}
+
+.ManageItem__progressEmpty {
+    color: #999;
+}
+
+.ManageItem__progressBar {
+    background: #e7e7e7;
+    border-radius: 999px;
+    height: 6px;
+    overflow: hidden;
+    width: 80px;
+}
+
+.ManageItem__progressBar span {
+    background: #1e88e5;
+    display: block;
+    height: 100%;
+}
+
+.ManageItem__progressValue {
+    font-size: 12px;
+    min-width: 4ch;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.ManageItem__prev {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    margin-left: 0;
+}
+
+.ManageItem__prevUp {
+    color: #D43331;
+    font-weight: 700;
+}
+
+.ManageItem__prevDown {
+    color: #fff;
+    font-weight: 700;
+}
+
+.ManageItem__prevSame {
+    color: #fff;
+    font-weight: 700;
+}
+
+.ManageItem__prevIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin-left: 0;
+}
+
+.ManageItem__prevSvg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.ManageItem__prevSvg--same {
+    transform: rotate(90deg);
+}
+
+.ManageItem__prevEmpty {
+    color: #999;
+}
+
+.ManageItem__warning {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    text-align: center;
+}
+
+.ManageItem__warningExpired {
+    color: #D43331;
+    font-weight: 700;
+    margin-left: 0;
+}
+
+.ManageItem__warningNear {
+    color: #b35a00;
+    font-weight: 700;
+}
+
+.ManageItem__mobileLabel {
+    display: none;
+    font-size: 11px;
+    font-weight: 700;
+    color: #666;
+    margin-right: 8px;
+}
+
+.ManageItem__toggle {
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    height: 24px;
+    justify-content: center;
+    padding: 0;
+    justify-self: start;
+    width: 24px;
+}
+
+.ManageItem__toggle svg {
+    fill: none;
+    height: 18px;
+    stroke: #111;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    transition: transform 0.2s ease;
+    width: 18px;
+}
+
+.ManageItem__toggle svg.is-collapsed {
+    transform: rotate(-90deg);
+}
+
+.ManageItem__body {
+    background: #fff;
+    padding: 14px 32px;
+}
+
+.ManageItem__stockHeader {
+    color: #333;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.ManageItem__stocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.ManageItem__add {
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+}
+
+.ManageItem__stock {
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 6px 10px;
+}
+
+.ManageItem__stockQty {
+    color: #333;
+    font-weight: 700;
+}
+
+.ManageItem__stockExpired {
+    color: #D43331;
+    font-weight: 700;
+}
+
+.ManageItem__stockNear {
+    color: #b35a00;
+    font-weight: 700;
+}
+
+.ManageItem__stockDelete {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+.ManageItem__stockActions {
+    align-items: center;
+    display: inline-flex;
+    gap: 6px;
+}
+
+.ManageItem__stockEditButton,
+.ManageItem__stockDelete {
+    align-items: center;
+    border-radius: 999px;
+    display: inline-flex;
+    height: 24px;
+    justify-content: center;
+    width: 24px;
+}
+
+.ManageItem__stockEditButton {
+    border: none;
+}
+
+.ManageItem__stockEditButton svg,
+.ManageItem__stockDelete svg {
+    fill: none;
+    height: 20px;
+    stroke: #111;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    width: 20px;
+}
+
+.ManageItem__stockEdit {
+    align-items: center;
+    display: flex;
+    gap: 6px;
+}
+
+.ManageItem__stockInput {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 12px;
+    padding: 4px 6px;
+    width: 110px;
+}
+
+.ManageItem__stockEditActions {
+    align-items: center;
+    display: inline-flex;
+    gap: 6px;
+}
+
+.ManageItem__stockSave,
+.ManageItem__stockCancel {
+    border: 1px solid #ddd;
+    border-radius: 999px;
+    font-size: 12px;
+    padding: 4px 10px;
+}
+
+.ManageItem__stockSave {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+}
+
+.ManageItem__stockCancel {
+    background: #fff;
+    color: #111;
+}
+
+.ManageItem__stockEmpty {
+    color: #777;
+    font-size: 12px;
+}
+
+.ManageItem__addTitle {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.ManageItem__addInputs {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.ManageItem__addLabel {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    gap: 4px;
+}
+
+.ManageItem__expiryMode {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.ManageItem__expiryModeButton {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 999px;
+    color: #111;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 2px 8px;
+}
+
+.ManageItem__expiryModeButton.is-active {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+}
+
+.ManageItem__addInput {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 12px;
+    padding: 6px 8px;
+    width: 140px;
+}
+
+.ManageItem__addButton {
+    background: #111;
+    border: none;
+    border-radius: 999px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 6px 14px;
+}
+
+.ManageActions {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    margin: 24px 0 32px;
+    flex-wrap: wrap;
+}
+
+.ManageActions .Button {
+    --width: rem(260px);
+    --fontSize: rem(18px);
+}
+
+.ManageFloatButton {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 20;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: var(--colorYellow);
+    border-radius: 20px;
+}
+
+.ManageFloatButton__link {
+    position: relative;
+    display: block;
+    padding: 36px 40px 16px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.ManageFloatButton__link::before {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    width: 150px;
+    height: 156px;
+    content: '';
+    background-image: url('~assets/images/manage/dammy01.png');
+    background-size: cover;
+    transform: translateX(-50%);
+}
+
+.ManageFloatButton__button {
+    display: block;
+    padding: 8px;
+    margin-top: 8px;
+    font-size: 17px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+button.Button__link {
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    .ManagePage {
+        padding-bottom: 88px;
+    }
+
+    .ManageSection__header {
+        display: none;
+    }
+
+    .ManageHero__bar,
+    .ManageHero__body {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .ManageHero__title {
+        font-size: 20px;
+    }
+
+    .ManageItem__header {
+        grid-template-columns: 28px 1fr;
+        column-gap: 8px;
+        row-gap: 6px;
+        padding: 12px 16px;
+    }
+
+    .ManageSection__header {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+
+    .ManageSection__headerShift {
+        margin-left: -6px;
+    }
+
+    .ManageItem__progress {
+        justify-content: flex-start;
+    }
+
+    .ManageItem__progress--shifted {
+        transform: none;
+    }
+
+    .ManageItem__nameWrap,
+    .ManageItem__summary,
+    .ManageItem__progress,
+    .ManageItem__prev,
+    .ManageItem__warning {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: flex-start;
+    }
+
+    .ManageItem__toggle {
+        grid-column: 1;
+        align-self: start;
+    }
+
+    .ManageItem__nameWrap {
+        grid-column: 2;
+    }
+
+    .ManageItem__summary,
+    .ManageItem__progress,
+    .ManageItem__prev,
+    .ManageItem__warning {
+        grid-column: 2;
+    }
+
+    .ManageItem__mobileLabel {
+        display: inline-flex;
+    }
+
+    .ManageItem__name {
+        font-size: 15px;
+    }
+
+    .ManageItem__summaryValue {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .ManageItem__summaryCurrent {
+        background: #fff;
+        border: 1px solid #111;
+        border-radius: 999px;
+        padding: 2px 10px;
+        font-size: 13px;
+    }
+
+    .ManageItem__summaryRecommended {
+        color: #555;
+        font-size: 12px;
+    }
+
+    .ManageItem__summarySlash {
+        display: inline;
+    }
+
+    .ManageSection__title {
+        position: sticky;
+        top: rem(50px);
+        z-index: 1;
+    }
+
+    .ManageItem__body {
+        padding: 12px 16px;
+        padding-left: 44px;
+    }
+
+    .ManageItem__stocks {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .ManageItem__stock {
+        width: calc(50% - 6px);
+        justify-content: space-between;
+        background: #fff;
+        border-color: #eee;
+        padding: 8px 12px;
+    }
+
+    .ManageItem__stockEdit {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ManageItem__stockInput {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .ManageItem__stockEditActions {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .ManageItem__stockSave,
+    .ManageItem__stockCancel {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ManageItem__addInputs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ManageItem__addLabel {
+        width: 100%;
+    }
+
+    .ManageItem__addInput {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .ManageItem__addButton {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ManageActions {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .ManageActions .Button {
+        width: 100%;
+    }
+
+    .ManageFloatButton {
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .ManageFloatButton__link {
+        padding: 8px 30px 8px 92px;
+        font-size: 16px;
+    }
+
+    .ManageFloatButton__link::before {
+        top: 50%;
+        left: 0;
+        width: 60px;
+        height: 62px;
+        transform: translateY(-50%);
+    }
+
+    .ManageFloatButton__button {
+        font-size: 15px;
+    }
+}
+
+.collapse-enter-active,
+.collapse-leave-active {
+    transition: height 0.2s ease-out;
+    overflow: hidden;
+}
+
+.collapse-enter,
+.collapse-leave-to {
+    height: 0;
+}
+
+.collapse-slow-enter-active,
+.collapse-slow-leave-active {
+    transition: height 0.5s ease-out;
+    overflow: hidden;
+}
+
+.collapse-slow-enter,
+.collapse-slow-leave-to {
+    height: 0;
+}

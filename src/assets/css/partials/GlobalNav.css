@@ -1,16 +1,19 @@
 .GlobalNav {
   margin-bottom: rem(80px);
   background-color: var(--colorNavy);
+  position: sticky;
+  top: 0;
+  z-index: 900;
 
   & .GlobalNav__list {
     display: flex;
     align-items: center;
-    font-size: rem(14px);
+    font-size: rem(12px);
     line-height: 1;
 
     & > li {
       box-sizing: border-box;
-      flex-basis: 20%;
+      flex-basis: calc(100% / 6);
       flex-shrink: 0;
       text-align: center;
     }
@@ -34,6 +37,7 @@
       font-weight: bolder;
       color: #fff;
       text-decoration: none;
+      white-space: nowrap;
       transition: background-color 0.5s ease-out;
     }
 
@@ -48,7 +52,17 @@
   }
 }
 
+.GlobalHeaderWrap .GlobalNav {
+  margin-bottom: 0;
+}
+
 @media (--md) {
+  .GlobalNav {
+    display: none;
+  }
+}
+
+@media print {
   .GlobalNav {
     display: none;
   }

@@ -13,7 +13,7 @@ import {
   POSTAL_CODE,
   ADDRESS,
   BREAK_POINT,
-  COMMON_DESC,
+  COMMON_DESC
 } from './site.config'
 
 const NODE_ENV = process.env.NODE_ENV
@@ -34,44 +34,89 @@ export default {
     TWITTER_URL,
     ADDRESS,
     POSTAL_CODE,
-    BREAK_POINT,
+    BREAK_POINT
   },
   generate: {
     interval: 1000,
     fallback: true,
+    routes: [
+      '/manage/score/0/',
+      '/manage/score/15/',
+      '/manage/score/30/',
+      '/manage/score/45/',
+      '/manage/score/60/',
+      '/manage/score/75/',
+      '/manage/score/90/',
+      '/manage/score/100/'
+    ]
   },
   router: {
     base: ROUTER_BASE_DIR,
-    trailingSlash: true,
+    trailingSlash: true
   },
   srcDir: 'src/',
   head: {
     htmlAttrs: {
-      prefix: 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb',
+      prefix: 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb'
     },
     meta: [
       { charset: 'utf-8' },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1, user-scalable=no',
+        content: 'width=device-width, initial-scale=1, user-scalable=no'
       },
       { hid: 'description', name: 'description', content: COMMON_DESC },
       { hid: 'og:site_name', property: 'og:site_name', content: SITE_NAME },
+      { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' },
       { hid: 'og:type', property: 'og:type', content: 'article' },
       { hid: 'og:url', property: 'og:url', content: SITE_URL },
       { hid: 'og:title', property: 'og:title', content: SITE_NAME },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: COMMON_DESC,
+        content: COMMON_DESC
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: `${OGP_DIR}/common1.jpeg`,
+        content: `${OGP_DIR}/common1.jpeg`
       },
+      {
+        hid: 'og:image:width',
+        property: 'og:image:width',
+        content: '1200'
+      },
+      {
+        hid: 'og:image:height',
+        property: 'og:image:height',
+        content: '640'
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: `${OGP_DIR}/common1.jpeg`
+      },
+      {
+        hid: 'twitter:image:width',
+        name: 'twitter:image:width',
+        content: '1200'
+      },
+      {
+        hid: 'twitter:image:height',
+        name: 'twitter:image:height',
+        content: '640'
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/png', href: '/favicon.png?v=20260304b' },
+      { rel: 'shortcut icon', type: 'image/png', href: '/favicon.png?v=20260304b' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v=20260304b' }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -89,15 +134,15 @@ export default {
     '~plugins/axios',
     '~plugins/vue-js-modal',
     { src: '~/plugins/vue-cookies', mode: 'client' },
-    { src: '~/plugins/vue-local-strage', mode: 'client' },
+    { src: '~/plugins/vue-local-strage', mode: 'client' }
   ],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: ['@nuxtjs/gtm'],
   gtm: {
-    id: '',
-    pageTracking: true,
+    id: 'GTM-PPCQZKQ',
+    pageTracking: true
   },
   /*
    ** Nuxt.js modules
@@ -107,18 +152,22 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    baseURL: '/'
+    // proxy: true
+  },
   i18n: {
     locales: [
-      { code: 'ja', iso: 'ja_JP' },
-      { code: 'en', iso: 'en-US' },
+      { code: 'ja', iso: 'ja' },
+      { code: 'en', iso: 'en-US' }
     ],
     defaultLocale: 'ja',
     vueI18nLoader: true,
     vueI18n: {
-      fallbackLocale: 'en',
+      fallbackLocale: 'en'
     },
-    detectBrowserLanguage: false,
+    detectBrowserLanguage: false
   },
   /*
    ** Build configuration
@@ -126,17 +175,17 @@ export default {
   build: {
     postcss: {
       plugins: {
-        'postcss-rem': {},
+        'postcss-rem': {}
       },
       preset: {
         features: {
           'custom-media-queries': true,
-          'nesting-rules': true,
+          'nesting-rules': true
         },
         autoprefixer: {
-          grid: true,
-        },
-      },
+          grid: true
+        }
+      }
     },
     extend(config, ctx) {
       const currentAlias = config.resolve.alias
@@ -145,12 +194,12 @@ export default {
         '@partials': join(__dirname, 'src/partials'),
         '@mixins': join(__dirname, 'src/mixins'),
         '@utils': join(__dirname, 'src/utils'),
-        '@lib': join(__dirname, 'src/lib'),
+        '@lib': join(__dirname, 'src/lib')
       }
       config.resolve.alias = {
         ...currentAlias,
-        ...newAlias,
+        ...newAlias
       }
-    },
-  },
+    }
+  }
 }

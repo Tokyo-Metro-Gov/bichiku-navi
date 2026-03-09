@@ -2,7 +2,7 @@
   position: relative;
   padding-top: rem(56px);
   margin-top: rem(128px);
-  background-color: var(--colorLGray);
+  background-color: #fffdef;
 
   &::before {
     position: absolute;
@@ -12,21 +12,29 @@
     width: rem(76px);
     height: rem(104px);
     content: '';
-    background-image: image-set(
-      url('~assets/images/tool/result/img-01.png') 1x,
-      url('~assets/images/tool/result/img-01@2x.png') 2x
-    );
+    background-image: image-set(url('~assets/images/tool/result/dammy09.png') 1x,
+        url('~assets/images/tool/result/dammy09@2x.png') 2x);
     background-repeat: no-repeat;
     background-size: contain;
     transform: translateX(-50%);
   }
 
   & .ToolResult__frame {
-    padding: rem(20px);
+    padding: 0;
     margin-top: rem(32px);
-    background-color: #00206320;
-    border: 3px solid #00206366;
+    background-color: #ffe802;
+    border: 3px solid #ffe802;
     border-radius: rem(10px);
+    overflow: hidden;
+  }
+
+  & .ToolResult__frame .ToolResult__titleSub {
+    padding: rem(7px) rem(16px);
+    line-height: 1.2;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    background-color: #ffe802;
   }
 
   & .ToolResult__title {
@@ -55,10 +63,15 @@
 
   & .ToolResult__titleSub {
     text-align: center;
+    color: #000;
 
-    & > span {
+    &>span {
       display: block;
     }
+  }
+
+  & .ToolResult__lead {
+    color: #000;
   }
 
   & .ToolResult__shareList {
@@ -68,36 +81,37 @@
     margin-top: rem(24px);
     line-height: 1;
 
-    & > li {
+    &>li {
       margin-right: 8px;
       margin-left: 8px;
       cursor: pointer;
     }
 
-    & > li:hover {
+    &>li:hover {
       opacity: 0.7;
     }
 
-    & > li:first-child {
+    &>li:first-child {
       display: none;
     }
 
-    & > li:nth-child(2) {
+    &>li:nth-child(2) {
       background-color: #fff;
     }
 
-    & > li:last-child {
+    &>li:last-child {
       display: flex;
       align-items: center;
       padding: rem(12px);
       background-color: var(--colorYellow);
+      color: #000;
     }
 
-    & > li:last-child > img {
+    &>li:last-child>img {
       margin-right: rem(8px);
     }
 
-    & > li + li {
+    &>li+li {
       margin-left: rem(16px);
     }
   }
@@ -107,13 +121,107 @@
   }
 
   & .ToolResult__itemList {
-    & > li {
+    &>li {
       margin-top: rem(32px);
     }
 
-    & > li + li {
+    &>li+li {
       margin-top: rem(24px);
     }
+  }
+
+  & .ToolResult__moreButton {
+    display: block;
+    width: rem(330px);
+    height: rem(40px);
+    margin: rem(24px) auto 0;
+    padding: 0;
+    line-height: rem(40px);
+    font-size: rem(14px);
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: rem(24px);
+  }
+
+  & .ToolResult__moreButton:hover {
+    opacity: 0.8;
+  }
+
+  & .ToolResult__cta {
+    margin-top: rem(56px);
+    padding: rem(24px) rem(16px);
+    border-radius: rem(16px);
+  }
+
+  & .ToolResult__ctaRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(24px);
+  }
+
+  & .ToolResult__ctaImage {
+    width: rem(100px);
+    height: rem(100px);
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  & .ToolResult__ctaBubble {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(190px);
+    min-height: rem(105px);
+    padding: rem(18px) rem(24px);
+    font-size: rem(14px);
+    font-weight: bold;
+    line-height: 1.6;
+    text-align: center;
+    white-space: normal;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 50%;
+  }
+
+  & .ToolResult__ctaButton {
+    margin-top: rem(24px);
+    text-align: center;
+  }
+
+  & .ToolResult_reccomendtips {
+    margin-top: rem(48px);
+  }
+
+  & .ToolResult__recommendTipsHeader {
+    display: flex;
+    justify-content: center;
+  }
+
+  & .ToolResult__recommendTipsTitle {
+    margin: 0;
+    font-size: rem(20px);
+    font-weight: bold;
+  }
+
+  & .ToolResult__recommendTipsImage {
+    display: block;
+    width: rem(120px);
+    margin: rem(12px) auto 0;
+    height: auto;
+  }
+
+  & .ToolResult_reccomendtips .TipsList {
+    margin-top: rem(24px);
+  }
+
+  & .ToolResult__recommendTipsMore {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(24px);
   }
 
   & .ToolResult__listItem {
@@ -145,8 +253,9 @@
   & .ToolResult__listItemName {
     font-size: rem(18px);
     font-weight: bold;
+    color: #000;
 
-    & > span {
+    &>span {
       margin-right: rem(16px);
       font-size: rem(13px);
       font-weight: normal;
@@ -157,9 +266,10 @@
     padding-top: rem(12px);
     margin-top: rem(12px);
     font-weight: bold;
+    color: #000;
     border-top: 1px solid #c1c1c1;
 
-    & > span {
+    &>span {
       display: inline;
       margin-right: rem(8px);
       font-size: rem(13px);
@@ -171,6 +281,7 @@
     padding-top: rem(12px);
     margin-top: rem(12px);
     font-size: rem(14px);
+    color: #000;
     border-top: 1px solid #c1c1c1;
   }
 
@@ -216,7 +327,7 @@
       opacity: 0.7;
     }
 
-    & > img {
+    &>img {
       width: 80%;
       height: auto;
       margin-top: rem(4px);
@@ -259,7 +370,7 @@
   }
 
   & .ToolResult__modalClose {
-    & > button {
+    &>button {
       position: absolute;
       top: rem(20px);
       right: rem(20px);
@@ -271,8 +382,8 @@
       appearance: none;
     }
 
-    & > button::before,
-    & > button::after {
+    &>button::before,
+    &>button::after {
       position: absolute;
       top: 0;
       left: 50%;
@@ -283,11 +394,11 @@
       border-left: 1px solid #000;
     }
 
-    & > button::before {
+    &>button::before {
       transform: rotate(45deg);
     }
 
-    & > button::after {
+    &>button::after {
       transform: rotate(-45deg);
     }
   }
@@ -337,6 +448,147 @@
     margin-top: rem(56px);
   }
 
+  & .ToolResult__preview {
+    display: flex;
+    justify-content: center;
+    gap: rem(48px);
+    margin-top: rem(24px);
+    padding: rem(32px) rem(16px);
+    border-radius: rem(16px);
+  }
+
+  & .ToolResult__previewItem {
+    width: rem(380px);
+    text-align: center;
+  }
+
+  & .ToolResult__previewImageWrap {
+    padding: rem(8px);
+    border-radius: rem(12px);
+    overflow: hidden;
+  }
+
+  & .ToolResult__previewImage {
+    display: block;
+    width: 100%;
+    height: rem(200px);
+    object-fit: contain;
+    background-color: #fff;
+    border: 4px solid #ffe802;
+    border-radius: rem(8px);
+    box-shadow: 0 rem(6px) rem(14px) rgba(0, 0, 0, 0.18);
+  }
+
+  & .ToolResult__previewTitle {
+    margin-top: rem(16px);
+    font-size: rem(16px);
+    font-weight: bold;
+  }
+
+  & .ToolResult__titleDecor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & .ToolResult__titleDecor::before,
+  & .ToolResult__titleDecor::after {
+    content: '';
+    display: inline-block;
+    height: 1em;
+    border-left: 1px solid #000;
+  }
+
+  & .ToolResult__titleDecor::before {
+    margin-right: rem(10px);
+    transform: rotate(-30deg);
+  }
+
+  & .ToolResult__titleDecor::after {
+    margin-left: rem(8px);
+    transform: rotate(30deg);
+  }
+
+  & .ToolResult__previewButton {
+    margin-top: rem(12px);
+  }
+
+  & .ToolResult__previewActions {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: rem(30px);
+    margin-top: rem(12px);
+    min-height: rem(44px);
+  }
+
+  & .ToolResult__previewButton {
+    min-height: rem(44px);
+  }
+
+  & .ToolResult__previewPrint .Button {
+    --width: rem(100px);
+  }
+
+  & .ToolResult__previewActions .ToolResult__previewButton {
+    margin-top: 0;
+  }
+
+  & .ToolResult__previewButton .Button__link {
+    background: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font: inherit;
+    width: 100%;
+  }
+
+  & .ToolResult__previewButton--mail {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  & .ToolResult__previewButton--spOnly {
+    display: none;
+  }
+
+  & .ToolResult__mailLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    line-height: 0;
+    color: #000;
+    text-decoration: none;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  & .ToolResult__mailIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+  }
+
+  & .ToolResult__mailLink:hover {
+    opacity: 0.8;
+  }
+
+  & .ToolResult__previewText {
+    margin-top: rem(12px);
+    font-size: rem(13px);
+    line-height: 1.6;
+    min-height: rem(42px);
+  }
+
+  & .ToolResult__previewTextLine {
+    display: block;
+    white-space: nowrap;
+  }
+
   & .ToolResult__overviewListTile {
     margin-top: rem(30px);
   }
@@ -346,7 +598,9 @@
     flex-wrap: wrap;
     margin-top: rem(3px);
     margin-right: rem(-15px);
+    padding: rem(12px) rem(12px) rem(16px);
     font-size: rem(13px);
+    background-color: #fff;
 
     & li {
       &:focus {
@@ -363,7 +617,8 @@
     margin-top: rem(5px);
     margin-right: rem(5px);
     cursor: pointer;
-    background-color: #fff;
+    background-color: #fff7af;
+    color: #000;
     border-radius: 5px;
   }
 
@@ -382,13 +637,103 @@
     margin-top: rem(32px);
     font-size: rem(12px);
   }
+
+  & .ToolResult__settings {
+    margin-top: rem(48px);
+    padding: rem(24px) rem(32px);
+    background-color: #fff;
+    border: 1px solid #c1c1c1;
+    border-radius: rem(16px);
+  }
+
+  & .ToolResult__settingsToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: rem(12px) rem(16px);
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: rem(999px);
+    position: relative;
+  }
+
+  & .ToolResult__settingsTitle {
+    margin: 0;
+    font-size: rem(18px);
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+  }
+
+  & .ToolResult__settingsToggleIcon {
+    width: rem(10px);
+    height: rem(10px);
+    margin-left: 0;
+    position: absolute;
+    right: rem(28px);
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+  }
+
+  & .ToolResult__settingsToggle[aria-expanded='true'] .ToolResult__settingsToggleIcon {
+    transform: rotate(-135deg);
+  }
+
+  & .ToolResult__settingsBody {
+    margin-top: rem(16px);
+  }
+
+  & .ToolResult__settingsAction {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(20px);
+  }
+
+  & .ToolResult__settingsEditButton {
+    --color: #f0f0f0;
+  }
+
+  & .ToolResult__settingsList {
+    display: grid;
+    grid-template-columns: rem(140px) 1fr;
+    gap: rem(12px) rem(16px);
+    margin: 0;
+  }
+
+  & .ToolResult__settingsRow {
+    display: contents;
+  }
+
+  & .ToolResult__settingsList dt,
+  & .ToolResult__settingsList dd {
+    margin: 0;
+    padding: rem(10px) rem(16px);
+    background-color: #f0f0f0;
+    border-radius: rem(8px);
+  }
+
+  & .ToolResult__settingsList dt {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  & .ToolResult__settingsFamily {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    line-height: 1.6;
+  }
 }
 
 @media (--md) {
   .ToolResult {
-    padding-right: rem(10px);
-    padding-left: rem(10px);
-    margin-top: rem(32px);
+      padding-right: rem(10px);
+      padding-left: rem(10px);
+      margin-top: rem(32px);
 
     &::before {
       top: rem(-40px);
@@ -402,34 +747,34 @@
       align-items: center;
       justify-content: center;
 
-      & > li {
+      &>li {
         margin-right: 16px;
         margin-left: 16px;
       }
 
-      & > li:first-child {
+      &>li:first-child {
         display: block;
       }
 
-      & > li:not(:last-child) {
+      &>li:not(:last-child) {
         flex-shrink: 0;
       }
 
-      & > li:last-child > img {
+      &>li:last-child>img {
         margin-right: rem(8px);
       }
 
-      & > li + li {
+      &>li+li {
         margin-left: rem(8px);
       }
     }
 
     & .ToolResult__itemList {
-      & > li {
+      &>li {
         margin-top: rem(32px);
       }
 
-      & > li + li {
+      &>li+li {
         margin-top: rem(16px);
       }
     }
@@ -457,18 +802,60 @@
     & .ToolResult__listItemName {
       font-size: rem(14px);
 
-      & > span {
+      &>span {
         display: inline;
         margin-right: 0.5rem;
         font-size: rem(11px);
       }
     }
 
+    & .ToolResult__cta {
+      padding: rem(20px) rem(12px);
+    }
+
+    & .ToolResult__ctaRow {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: rem(12px);
+    }
+
+    & .ToolResult__ctaBubble {
+      width: rem(120px);
+      min-height: rem(72px);
+      padding: rem(10px) rem(12px);
+      font-size: rem(11px);
+      line-height: 1.4;
+    }
+
+    & .ToolResult__ctaImage {
+      width: rem(72px);
+      height: rem(72px);
+    }
+
+    & .ToolResult_reccomendtips {
+      margin-top: rem(40px);
+    }
+
+    & .ToolResult__recommendTipsHeader {
+      flex-direction: column;
+      gap: rem(8px);
+      text-align: center;
+    }
+
+    & .ToolResult__recommendTipsTitle {
+      font-size: rem(18px);
+    }
+
+    & .ToolResult__recommendTipsImage {
+      width: rem(100px);
+    }
+
     & .ToolResult__listItemQuantity {
       font-size: rem(14px);
       font-weight: bold;
 
-      & > span {
+      &>span {
         display: inline;
         margin-right: 0;
         font-size: rem(11px);
@@ -479,12 +866,21 @@
     & .ToolResult__titleSub {
       text-align: left;
 
-      & > span {
+      &>span {
         display: inline;
       }
     }
 
-    & .ToolResult__listItemStoresLabel {
+    & .ToolResult__message {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    & .ToolResult__detail .ToolResult__message {
+      text-align: center !important;
     }
 
     & .ToolResult__listItemStores {
@@ -511,7 +907,7 @@
       font-size: 10px;
       border-radius: 22px;
 
-      & > img {
+      &>img {
         width: 80px;
         height: auto;
         margin-top: rem(2px);
@@ -525,6 +921,59 @@
 
     & .ToolResult__overviewListItem {
       flex-basis: calc(100% - 5px);
+    }
+
+      & .ToolResult__preview {
+        flex-direction: column;
+        gap: rem(32px);
+        margin-top: rem(32px);
+      }
+
+      & .ToolResult__previewButton--spOnly {
+        display: flex;
+      }
+
+    & .ToolResult__previewItem {
+      width: 100%;
+    }
+
+    & .ToolResult__settings {
+      padding: rem(20px) rem(16px);
+    }
+
+    & .ToolResult__settingsToggle {
+      padding: rem(10px) rem(12px);
+    }
+
+    & .ToolResult__settingsList {
+      grid-template-columns: 1fr;
+    }
+
+    & .ToolResult__settingsList dt {
+      text-align: left;
+    }
+
+    & .ToolResult__settingsList dd {
+      padding-left: rem(12px);
+    }
+
+    & .ToolResult__settingsAction {
+      justify-content: center;
+    }
+
+    & .ToolResult__overview {
+      text-align: center;
+    }
+
+    & .ToolResult__overview .ToolResult__lead {
+      display: inline-block;
+      width: auto;
+      text-align: center !important;
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: rem(16px);
+      padding-left: rem(16px);
+      box-sizing: border-box;
     }
   }
 }
@@ -545,11 +994,35 @@
 
   .ToolResult__overview {
     & .ToolResult__lead {
-      display: none;
+      display: inline-block;
+      text-align: center !important;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: rem(16px);
+      padding-left: rem(16px);
+      box-sizing: border-box;
+    }
+
+    & .ToolResult__overview {
+      text-align: center;
+    }
+
+    & .ToolResult__overview .ToolResult__titleSub.ToolResult__lead {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      text-align: center !important;
+      padding-right: rem(16px);
+      padding-left: rem(16px);
+      box-sizing: border-box;
     }
 
     & .ToolResult__titleSub {
       text-align: center;
+    }
+
+    & .ToolResult__jumpGuide {
+      display: none !important;
     }
   }
 
@@ -565,17 +1038,46 @@
       break-inside: avoid;
     }
 
+    & .ToolResult__frame {
+      overflow: visible;
+    }
+
+    & .ToolResult__frame .ToolResult__titleSub {
+      padding-top: rem(12px);
+      padding-bottom: rem(12px);
+      line-height: 1.6;
+      white-space: normal;
+    }
+
+    & .ToolResult__overviewList {
+      display: flex !important;
+      flex-wrap: wrap;
+      margin-right: rem(-5px);
+    }
+
+    & .ToolResult__preview,
+    & .ToolResult__settings,
     & .ToolResult__detail,
+    & .ToolResult__cta,
+    & .ToolResult__recommendTips,
+    & .ToolResult__credit,
+    & .ToolResult__moreButton,
     & .ToolResult__shareHeader,
     & .PageBlock__text {
       display: none;
     }
 
     & .ToolResult__overviewListItem {
-      flex-basis: calc(33% - 5px);
+      display: flex;
+      align-items: center;
+      min-height: rem(30px);
+      flex: 0 0 calc(33.333% - 5px) !important;
+      max-width: calc(33.333% - 5px) !important;
+      margin-top: 0;
+      margin-right: 5px;
       padding-top: 5px;
       padding-bottom: 5px;
       font-size: rem(10px);
     }
+    }
   }
-}

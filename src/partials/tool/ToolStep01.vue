@@ -35,13 +35,7 @@
     <ul class="ToolStep01__indexList">
       <template v-for="count in 9">
         <li :key="count">
-          <input
-            :id="`people${count}`"
-            v-model="people"
-            :value="count"
-            type="radio"
-            @click="onChangePeople(count)"
-          />
+          <input :id="`people${count}`" v-model="people" :value="count" type="radio" @click="onChangePeople(count)" />
           <label tabindex="0" :for="`people${count}`">{{ count }}</label>
         </li>
       </template>
@@ -49,15 +43,8 @@
 
     <div>
       <template v-for="count in people">
-        <div
-          :id="`toolStep01Prompt0${count}`"
-          :key="count"
-          class="ToolStep01__prompt"
-        >
-          <header
-            class="ToolStep01__promptHeader"
-            v-html="$t('text03', { count: count })"
-          />
+        <div :id="`toolStep01Prompt0${count}`" :key="count" class="ToolStep01__prompt">
+          <header class="ToolStep01__promptHeader" v-html="$t('text03', { count: count })" />
 
           <div class="ToolStep01__promptBody">
             <tool-step01-input :index="count" @add-person="onAddPerson" />
@@ -66,11 +53,18 @@
       </template>
     </div>
 
-    <div v-show="family.length > 0" class="ToolStep01__results">
-      <div
-        class="ToolStep01__resultsText"
-        v-html="$t('text04', { people: people })"
-      />
+    <div v-show="family.length > 0" ref="results" class="ToolStep01__results">
+      <div class="ToolStep01__resultsImg">
+        <img
+          src="~/assets/images/tool/dammy02.png"
+          srcset="~/assets/images/tool/dammy02.png 1x, ~/assets/images/tool/dammy02@2x.png 2x"
+          alt=""
+          width="63"
+          height="72"
+        />
+      </div>
+
+      <div class="ToolStep01__resultsText" v-html="$t('text04', { people: people })" />
 
       <ul class="ToolStep01__resultsList">
         <template v-for="person in family">
@@ -78,13 +72,10 @@
             :key="person.id"
             class="ToolStep01__resultsListItem"
             :class="{
-              '-notEntered': person.sex === '' || person.generation === '',
+              '-notEntered': person.sex === '' || person.generation === ''
             }"
           >
-            <div
-              class="ToolStep01Results__listItemLabel"
-              v-html="$t('text05', { id: person.id })"
-            />
+            <div class="ToolStep01Results__listItemLabel" v-html="$t('text05', { id: person.id })" />
 
             <div class="ToolStep01Results__listItemBody">
               <template v-if="person.sex === '' || person.generation === ''">
@@ -101,12 +92,7 @@
       </ul>
 
       <div class="ToolInput__button">
-        <button
-          type="button"
-          class="Button"
-          :disabled="validateStep01()"
-          @click="enableInputs"
-        >
+        <button type="button" class="Button" :disabled="validateStep01()" @click="enableInputs">
           {{ $t('text06') }}
         </button>
 
@@ -133,28 +119,28 @@ import ToolStep01Input from '@partials/tool/ToolStep01Input'
 export default {
   name: 'ToolStep01',
   components: {
-    ToolStep01Input,
+    ToolStep01Input
   },
   mixins: [methods],
   props: {
     currentStep: {
       type: Number,
-      required: true,
+      required: true
     },
     totalSteps: {
       type: Number,
-      required: true,
+      required: true
     },
     goToNextStep: {
       type: Function,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
       people: 1,
       family: [],
-      innerFamily: [],
+      innerFamily: []
     }
   },
   computed: {
@@ -163,7 +149,7 @@ export default {
     },
     getPeople() {
       return this.people
-    },
+    }
   },
   watch: {
     // 選択した人数に連動した未選択データを生成する
@@ -178,7 +164,7 @@ export default {
           id: count + 1,
           sex: '',
           generation: '',
-          pre: true,
+          pre: true
         })
       }
     },
@@ -192,7 +178,7 @@ export default {
     // 修正する・次へを押させるようにする
     family() {
       this.validateStep01()
-    },
+    }
   },
   mounted() {
     const { people: queryPeople } = this.$route.query
@@ -204,10 +190,7 @@ export default {
   methods: {
     normalizeFamily() {
       this.family = [...this.family, ...this.innerFamily]
-        .filter(
-          (item1, index, self) =>
-            self.findIndex((item2) => item1.id === item2.id) === index
-        )
+        .filter((item1, index, self) => self.findIndex((item2) => item1.id === item2.id) === index)
         .sort((a, b) => (a.id < b.id ? -1 : 1))
     },
     displayPersonAttr(person) {
@@ -238,7 +221,7 @@ export default {
             text += '子供 中学生以上'
             break
           case 'adult':
-            text += '成人 20歳以上'
+            text += '成人 18歳以上'
             break
           case 'aged':
             text += '高齢者 65歳以上'
@@ -269,7 +252,7 @@ export default {
             text += 'Children (junior high school age or older)'
             break
           case 'adult':
-            text += 'Adults (20 or older)'
+            text += 'Adults (18 or older)'
             break
           case 'aged':
             text += 'Elderly (65 or older)'
@@ -289,8 +272,11 @@ export default {
       return this.getFamily.some(({ pre }) => pre === true)
     },
     setFamily() {
-      this.$localStorage.set('$toolValues', {
-        family: this.family,
+      const values = this.getLatestToolValues()
+
+      this.setToolValues({
+        ...values,
+        family: this.family
       })
     },
     onChangePeople(index) {
@@ -300,7 +286,7 @@ export default {
       this.$entryGtm({
         category: '自分に合った備蓄を調べてみよう',
         action: '●人で住んでいる',
-        label: `extra_people_${index}`,
+        label: `extra_people_${index}`
       })
 
       // 入力項目を減らす
@@ -310,6 +296,14 @@ export default {
       if (familyLength >= 1 && familyLength > index) {
         family.splice(index, familyLength)
       }
+
+      this.$nextTick(() => {
+        const firstPrompt = document.getElementById('toolStep01Prompt01')
+
+        if (firstPrompt) {
+          firstPrompt.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      })
     },
     onAddPerson(payload) {
       this.family.unshift(payload)
@@ -317,23 +311,28 @@ export default {
       this.normalizeFamily()
 
       this.disableInputs(payload.id)
+
+      this.$nextTick(() => {
+        const nextId = payload.id + 1
+        const nextPrompt = document.getElementById(`toolStep01Prompt0${nextId}`)
+
+        if (nextPrompt && this.people > 1) {
+          nextPrompt.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        } else {
+          this.scrollToResults()
+        }
+      })
     },
     enableInputs() {
-      const disabledInputs = document.querySelectorAll(
-        `.ToolStep01__prompt *:disabled`
-      )
+      const disabledInputs = document.querySelectorAll(`.ToolStep01__prompt *:disabled`)
 
       for (const disabledInput of disabledInputs) {
         disabledInput.disabled = false
       }
     },
     disableInputs(id) {
-      const prompt = document.querySelector(
-        `.ToolStep01__prompt:nth-of-type(${id})`
-      )
-      const radios = prompt.querySelectorAll(
-        'input[type="radio"]:not(:checked)'
-      )
+      const prompt = document.querySelector(`.ToolStep01__prompt:nth-of-type(${id})`)
+      const radios = prompt.querySelectorAll('input[type="radio"]:not(:checked)')
 
       prompt.querySelector('.Button').disabled = true
 
@@ -341,6 +340,15 @@ export default {
         radio.disabled = true
       }
     },
-  },
+    scrollToResults() {
+      this.$nextTick(() => {
+        const results = this.$refs.results
+
+        if (results && typeof results.scrollIntoView === 'function') {
+          results.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      })
+    }
+  }
 }
 </script>

@@ -1,0 +1,129 @@
+html[data-theme='green'] {
+  --color: #006d77;
+
+  color: #ffffff;
+  background-color: var(--color);
+
+  & .HomeTool {
+    background-color: var(--color);
+  }
+
+  & .PageTool {
+    background-color: var(--color);
+  }
+
+  & .PageMapDetail {
+    background-color: var(--color);
+  }
+
+  & .TipsSingleOthers {
+    background-color: var(--color);
+  }
+
+  & .TipsSingleShare__text,
+  & .TipsSingle__titleWrap,
+  & .TipsSingle__lead,
+  & .BaloonTitle {
+    color: #000;
+  }
+
+  & .TipsSingle__lead--plain {
+    color: #fff;
+  }
+
+  & .ToolResult {
+    background-color: var(--color);
+  }
+
+  & .MapIndexCities dt,
+  & .MapIndexCities dd>span>a {
+    color: #000;
+  }
+
+  & .PageMapIndex .Description {
+    color: #fff;
+  }
+
+  & .ToolResult__titleSub,
+  & .ToolResult__message {
+    color: #fff;
+  }
+
+  & .ToolResult__lead {
+    color: #fff;
+  }
+
+  & .PageManage .ManageHero__text {
+    color: #fff;
+  }
+
+  & .PageManage {
+    color: #222;
+
+    & .ManageItem {
+      color: #222;
+    }
+
+    & .ManageItem__prevUp,
+    & .ManageItem__warningExpired,
+    & .ManageItem__stockExpired {
+      color: #D43331;
+    }
+
+    & .ManageItem__prevDown {
+      color: #fff;
+    }
+
+    & .ManageItem__warningNear,
+    & .ManageItem__stockNear {
+      color: #b35a00;
+    }
+  }
+
+  & .ToolResult__frame .ToolResult__titleSub {
+    color: #000;
+  }
+
+  & .ToolResult__ctaBubble {
+    color: #000;
+  }
+
+  & .ToolResult__settingsList dt,
+  & .ToolResult__settingsList dd {
+    color: #000;
+  }
+
+  & .ToolResult__title::before,
+  & .ToolResult__title::after {
+    border-color: #fff;
+  }
+
+  & .WhyImageCaption {
+    color: #fff;
+  }
+
+  & .GlobalHeader,
+  & .GlobalHeader a {
+    color: #000;
+  }
+
+  & .SpGlobalHeader,
+  & .SpGlobalHeader a {
+    color: #000;
+  }
+
+  & .Button,
+  & .Button__link {
+    color: #000;
+  }
+
+  & .Document address span,
+  & .Document address a {
+    color: #000;
+  }
+
+  & .GlobalFooter__pageTop {
+    --startColor: var(--color);
+    --stopColor: var(--color);
+  }
+}

@@ -1,0 +1,4 @@
+.ToolResult .ToolResult__previewButton--spOnly { display: none; }
+@media (--md) {
+  .ToolResult .ToolResult__previewButton--spOnly { display: flex; }
+}

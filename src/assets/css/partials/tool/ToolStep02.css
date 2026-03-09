@@ -5,6 +5,7 @@
       padding-top: rem(24px);
       padding-bottom: rem(24px);
       line-height: 1.4;
+      color: #000;
       border-radius: 10px;
 
       &:focus {
@@ -28,6 +29,7 @@
   & .ToolStep02__inputText {
     margin-top: rem(16px);
     text-align: center;
+    color: #000;
   }
 }
 

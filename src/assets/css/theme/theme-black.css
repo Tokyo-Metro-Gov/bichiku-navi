@@ -1,15 +1,14 @@
 html[data-theme='black'] {
-  --color: black;
+  --color: #222222;
 
-  color: yellow;
+  color: #ffffff;
   background-color: var(--color);
 
   & .ToolResult,
   & .TipsSingleOthers,
   & .PageMapDetail,
   & .PageTool,
-  & .HomeTool,
-  & .GlobalHeader {
+  & .HomeTool {
     background-color: var(--color);
   }
 
@@ -20,14 +19,32 @@ html[data-theme='black'] {
   & .ToolInput,
   & .ToolResult__itemList,
   & .ToolResult__shareList > li:last-child,
+  & .TipsSingleShare__text,
   & .TipsSingle__lead,
   & .TipsSingle__titleWrap {
     color: #000;
   }
 
+  & .TipsSingle__lead--plain {
+    color: #fff;
+  }
+
+  & .PageMapIndex .Description {
+    color: #fff;
+  }
+
+  & .Document address span,
+  & .Document address a {
+    color: #000;
+  }
+
+  & .Document table tbody tr:nth-child(even) {
+    color: #000;
+  }
+
   & .TipsSingle a,
   & .TipsSingle blockquote {
-    color: yellow;
+    color: #ffffff;
   }
 
   & .HomeTool__input .Button__link {
@@ -37,8 +54,70 @@ html[data-theme='black'] {
   & .ToolResult__title {
     &::before,
     &::after {
-      border-color: yellow;
+      border-color: #ffffff;
     }
+  }
+
+  & .ToolResult__frame .ToolResult__titleSub {
+    color: #000;
+  }
+
+  & .ToolResult__ctaBubble {
+    color: #000;
+  }
+
+  & .ToolResult__settingsList dt,
+  & .ToolResult__settingsList dd {
+    color: #000;
+  }
+
+  & .ToolResult__message {
+    color: #fff;
+  }
+
+  & .ToolResult__lead {
+    color: #fff;
+  }
+
+  & .WhyImageCaption {
+    color: #fff;
+  }
+
+  & .PageManage .ManageHero__text {
+    color: #fff;
+  }
+
+  & .PageManage {
+    color: #222;
+
+    & .ManageItem {
+      color: #222;
+    }
+
+    & .ManageItem__prevUp,
+    & .ManageItem__warningExpired,
+    & .ManageItem__stockExpired {
+      color: #D43331;
+    }
+
+    & .ManageItem__prevDown {
+      color: #fff;
+    }
+
+    & .ManageItem__warningNear,
+    & .ManageItem__stockNear {
+      color: #b35a00;
+    }
+  }
+
+  & .GlobalHeader,
+  & .GlobalHeader a {
+    color: #000;
+  }
+
+  & .SpGlobalHeader,
+  & .SpGlobalHeader a {
+    color: #000;
   }
 
   & .GlobalFooter__pageTop {

@@ -35,20 +35,12 @@
 
           <div class="ToolInput__title" v-html="$t('text02')" />
 
-          <div
-            class="ToolStep01__people"
-            v-html="$t('text03', { people: people })"
-          />
+          <div class="ToolStep01__people" v-html="$t('text03', { people: people })" />
 
           <ul class="ToolStep01__indexList">
             <template v-for="count in 9">
               <li :key="`homeTool${count}`">
-                <input
-                  :id="`count${count}`"
-                  v-model="people"
-                  :value="count"
-                  type="radio"
-                />
+                <input :id="`count${count}`" v-model="people" :value="count" type="radio" />
                 <label tabindex="0" :for="`count${count}`">{{ count }}</label>
               </li>
             </template>
@@ -61,9 +53,9 @@
                 :to="{
                   path: localePath($getPath('tool')),
                   query: {
-                    people: people,
+                    people: people
                   },
-                  hash: '#toolStep01',
+                  hash: '#toolStep01'
                 }"
               >
                 {{ $t('text04') }}
@@ -81,8 +73,8 @@ export default {
   name: 'HomeTool',
   data() {
     return {
-      people: 1,
+      people: 1
     }
-  },
+  }
 }
 </script>

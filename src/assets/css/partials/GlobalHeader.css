@@ -5,23 +5,50 @@
   background-color: #fff;
 
   & .GlobalHeader__inner {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
+  & .GlobalHeader__logo-soumu {
+    & a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+  }
+
   & .GlobalHeader__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: rem(24px);
     font-weight: bolder;
 
     & a {
       display: flex;
       align-items: center;
-      text-decoration: none
+      text-decoration: none;
     }
 
-    & a > img {
+    & a>img {
       margin-right: rem(16px);
+    }
+  }
+
+  & .GlobalHeader__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  & .GlobalHeader__tmg-link {
+    margin-bottom: rem(8px);
+    font-size: rem(14px);
+
+    & a {
+      text-decoration: underline;
     }
   }
 
@@ -29,7 +56,7 @@
     display: flex;
     font-size: rem(14px);
 
-    & li + li {
+    & li+li {
       margin-left: rem(24px);
     }
 
@@ -40,9 +67,26 @@
   }
 }
 
+.GlobalHeaderWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
+}
+
+body {
+  padding-top: 200px;
+}
+
 @media (--md) {
   .GlobalHeader {
     display: none;
+  }
+
+  body {
+    padding-top: 0;
   }
 }
 

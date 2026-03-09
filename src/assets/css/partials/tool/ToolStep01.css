@@ -4,6 +4,7 @@
     font-size: rem(20px);
     font-weight: bold;
     text-align: center;
+    color: #000;
 
     & > span {
       font-size: rem(40px);
@@ -20,7 +21,7 @@
 
     & > li {
       flex-basis: 33%;
-      margin-top: rem(24px)
+      margin-top: rem(24px);
     }
 
     & label {
@@ -30,6 +31,7 @@
       width: rem(64px);
       height: rem(64px);
       font-size: rem(32px);
+      color: #000;
       border-radius: 50%;
 
       &:hover {
@@ -55,11 +57,12 @@
     font-size: rem(20px);
     font-weight: bold;
     text-align: center;
+    color: #000;
     background-color: var(--colorYellow);
   }
 
   & .ToolStep01__promptBody {
-    padding: rem(24px) rem(24px)  rem(32px);
+    padding: rem(24px) rem(24px) rem(32px);
     background-color: var(--colorLGray);
   }
 
@@ -71,12 +74,13 @@
     & label {
       display: block;
       padding: rem(16px) rem(10px);
+      color: #000;
       border-radius: 10px;
 
       &:hover {
         background-color: var(--colorLYellow);
       }
-      
+
       &:focus {
         outline: 1px dotted #212121;
         outline: 5px auto -webkit-focus-ring-color;
@@ -96,14 +100,13 @@
     font-size: rem(20px);
     font-weight: bold;
     text-align: center;
+    color: #000;
   }
 
   & .ToolStep01__inputSex {
     display: flex;
     justify-content: center;
     margin-top: rem(16px);
-
-
 
     & > div + div {
       margin-left: rem(16px);
@@ -134,6 +137,7 @@
     font-size: rem(20px);
     font-weight: bold;
     text-align: center;
+    color: #000;
   }
 
   & .ToolStep01__resultsList {
@@ -180,13 +184,17 @@
     padding: rem(16px);
     font-weight: bold;
     background-color: var(--colorYellow);
+    color: #000;
   }
 
   & .ToolStep01Results__listItemBody {
     padding: rem(16px);
+    color: #000;
 
+    & a {
+      color: #000;
+    }
   }
-
 }
 
 @media (--md) {
@@ -261,9 +269,6 @@
 
     & .ToolStep01__resultsList {
       margin-top: rem(16px);
-
     }
   }
-
-
 }

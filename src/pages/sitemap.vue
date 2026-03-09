@@ -1,4 +1,4 @@
-<i18n>
+﻿<i18n>
 {
   "ja": {
     "meta": {
@@ -11,7 +11,6 @@
     }
   }
 }
-
 </i18n>
 <template>
   <div class="Container -xxs">
@@ -36,7 +35,30 @@
             {{ $getTitle('tool', $i18n.locale) }}
           </nuxt-link>
         </li>
+
+        <li>
+          <nuxt-link :to="localePath($getPath('why'))">
+            {{ $getTitle('why', $i18n.locale) }}
+          </nuxt-link>
+        </li>
+
+        <li>
+          <nuxt-link :to="localePath($getPath('tips'))">
+            {{ $getTitle('tips', $i18n.locale) }}
+          </nuxt-link>
+
+          <ul>
+            <template v-for="({ id, title }, index) in tipsTitles">
+              <li :key="index">
+                <nuxt-link :to="localePath($getPath(id))">{{
+                  title[$i18n.locale]
+                }}</nuxt-link>
+              </li>
+            </template>
+          </ul>
+        </li>
       </ul>
+
     </div>
 
     <start-bichiku-button />
@@ -46,6 +68,7 @@
 <script>
 import head from '@mixins/head'
 import StartBichikuButton from '@partials/StartBichikuButton.vue'
+import { tipsTitles } from '@@/tips.config'
 
 export default {
   name: 'Sitemap',
@@ -62,6 +85,11 @@ export default {
       },
     }
   },
+  computed: {
+    tipsTitles() {
+      return tipsTitles
+    },
+  },
   methods: {
     isNotSinglePage() {
       return this.$route.name === 'tips' || this.$route.name === 'index'
@@ -74,3 +102,5 @@ export default {
   },
 }
 </script>
+
+

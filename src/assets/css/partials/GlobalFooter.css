@@ -5,7 +5,7 @@
     --paddingTop: rem(96px);
     --groundHeight: rem(85px);
 
-    padding-top: var(--paddingTop) ;
+    padding-top: var(--paddingTop);
     background-image: linear-gradient(
       to bottom,
       var(--startColor) 0,
@@ -28,7 +28,7 @@
 
   & .GlobalFooter__pageTopButton {
     position: fixed;
-    width:120px;
+    width: 120px;
     right: 20px;
     bottom: 200px;
     display: inline-block;
@@ -36,10 +36,10 @@
     cursor: pointer;
     z-index: 2;
   }
-  
+
   & .GlobalFooter__pageTopButton_Mobile {
     position: fixed;
-    width:60px;
+    width: 60px;
     right: 5px;
     bottom: 90px;
     display: inline-block;
@@ -47,7 +47,7 @@
     cursor: pointer;
     z-index: 3;
   }
-  
+
   & .GlobalFooter__banner {
     padding-top: rem(24px);
     padding-bottom: rem(24px);
@@ -105,7 +105,6 @@
     background-color: var(--colorSpecifed1);
   }
 }
-
 
 @media (--md) {
   .GlobalFooter {
